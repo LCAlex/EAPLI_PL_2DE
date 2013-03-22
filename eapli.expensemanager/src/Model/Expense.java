@@ -4,8 +4,11 @@
  */
 package Model;
 
+import eapli.util.DateTime;
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  *
@@ -30,5 +33,21 @@ public class Expense {
             this.amount = amount;
       }
 
+      public Expense(String description, int year, int month, int day, BigDecimal amount){
+          this(description, DateTime.newDate(year, month, day), amount);
+      }
+      
+      public Expense(Expense exp){
+          this.description=exp.description;
+          this.amount=exp.amount;
+      }
+      
+      public String toString(){
+          NumberFormat n = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+          double doubleAmount = this.amount.doubleValue();
+          String s = "Description:" + this.description +
+                     "\nAmount:" + n.format(doubleAmount);
+          return s;
+      }
       
 }
