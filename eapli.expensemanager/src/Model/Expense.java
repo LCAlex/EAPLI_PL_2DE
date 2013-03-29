@@ -38,10 +38,14 @@ public class Expense {
       }
       
       public Expense(Expense exp){
+            if(exp==null){
+                   throw new IllegalArgumentException();
+            }
           this.description=exp.description;
           this.amount=exp.amount;
       }
       
+      @Override
       public String toString(){
           NumberFormat n = NumberFormat.getCurrencyInstance(Locale.FRANCE);
           double doubleAmount = this.amount.doubleValue();
