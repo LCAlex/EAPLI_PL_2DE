@@ -15,8 +15,10 @@ import java.util.Locale;
  * @author mcn
  */
 public class Expense {
-       private String description;
+      private String description;
       private BigDecimal amount;
+      private Date dateOccurred;
+      
 
       protected Expense() {
       }
@@ -53,5 +55,29 @@ public class Expense {
                      "\nAmount:" + n.format(doubleAmount);
           return s;
       }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
+
+    public Date getDateOccurred() {
+        return dateOccurred;
+    }
+
+    public void setDateOccurred(Date dateOccurred) {
+        this.dateOccurred = dateOccurred;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
       
 }
