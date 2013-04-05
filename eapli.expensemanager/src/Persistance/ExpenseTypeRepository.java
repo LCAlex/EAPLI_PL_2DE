@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Tecnica21
  */
-public class ExpenseTypeRepository {
+public class ExpenseTypeRepository implements IExpenseTypeRepository{
     
     private static List<ExpenseType> listExpenseType= new ArrayList<>();
     
