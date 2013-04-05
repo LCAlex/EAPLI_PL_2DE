@@ -5,8 +5,10 @@
 package Presentation;
 
 import Controllers.ExpenseTypeRegisterController;
+import Model.ExpenseType;
 import eapli.util.Console;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,25 +16,28 @@ import java.util.ArrayList;
  */
 public class ExpenseTypeRegisterUI {
     
-    public ExpenseTypeRegisterUI() {
-      }
+    public ExpenseTypeRegisterUI() {}
 
 public void run() {
-            System.out.println("* * *  REGISTER AN EXPENSE TYPE  * * *\n");
-            String name = Console.readLine("Name:");
+    
             ExpenseTypeRegisterController controller = new ExpenseTypeRegisterController();
-            controller.registerExpense(name);
-
-            System.out.println("expense type recorded.");
+            
+            String name;
+            do{
+                System.out.println("* * *  REGISTER AN EXPENSE TYPE  * * *\n");
+                controller.obtainList();
+                name = Console.readLine("Name: ");
+                if(name.equalsIgnoreCase("end")){
+                    // Do nothing
+                }else{
+                    controller.registerExpenseType(name);
+                }
+            }while(name.equalsIgnoreCase("end"));
       }
 
-    public void displayList(ArrayList <ExpenseType> expenseTypeList) {
-//        for(int i = 0; i < expenseTypeList.size(); i++)
-//        {
-            ExpenseType expenseType = expenseTypeList.;  
+    public void displayList(List <ExpenseType> expenseTypeList) {
             for(ExpenseType d:expenseTypeList) {
                 System.out.println(d);
             }
     }
-     //} 
 }
