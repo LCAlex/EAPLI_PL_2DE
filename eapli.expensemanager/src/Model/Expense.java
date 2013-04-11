@@ -7,6 +7,7 @@ package Model;
 import eapli.util.DateTime;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -90,6 +91,11 @@ public class Expense {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+    
+    public int getExpenseMonth(){
+        Calendar cal = DateTime.dateToCalendar(dateOccurred);
+        return cal.MONTH;
     }
       
 }
