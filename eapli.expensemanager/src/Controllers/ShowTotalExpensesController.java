@@ -24,7 +24,7 @@ public class ShowTotalExpensesController {
     public BigDecimal showExpenses(int month){
         ExpenseRepository rep = new ExpenseRepository();
         list=rep.getAllExpenses(month);
-        ExpenseRecord rec = new ExpenseRecord();
+        ExpenseRecord rec = new ExpenseRecord(list);
         return rec.getTotal();
     }
     
