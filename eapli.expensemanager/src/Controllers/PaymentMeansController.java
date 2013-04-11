@@ -43,7 +43,8 @@ public class PaymentMeansController {
     }
     
     void registerDCard(long num, String ib, String tipo){
-        DebitCard dc = new DebitCard(num, ib, tipo);        
+        DebitCard dc = new DebitCard(num, ib, tipo);  
+        pmr.registerPaymentMean(dc);
     }
     
     
