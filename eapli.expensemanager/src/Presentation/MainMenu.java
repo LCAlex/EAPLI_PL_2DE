@@ -40,6 +40,7 @@ class MainMenu {
             System.out.println("1. Register an expense");
             System.out.println("2. Show expenses");
             System.out.println("3. Register an expense type");
+            System.out.println("4. Show Total Expenses");
             System.out.println("0. Exit\n\n");
 
             int option = Console.readInteger("Please choose an option");
