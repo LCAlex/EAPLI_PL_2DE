@@ -50,4 +50,8 @@ public class ExpenseRepository implements IExpenseRepository{
         
         return copy;
     }
+
+    public List<Expense> getAllExpenses(int month) {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
 }

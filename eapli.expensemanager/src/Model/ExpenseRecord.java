@@ -17,6 +17,10 @@ public class ExpenseRecord {
     public ExpenseRecord(List<Expense> list){
         this.list=list;
     }
+
+    public ExpenseRecord() {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
     
     public BigDecimal getTotal(){
         BigDecimal total=new BigDecimal(0);
