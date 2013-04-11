@@ -15,4 +15,5 @@ public interface IExpenseRepository {
     void saveExpense(Expense exp);
     List<Expense> getAllExpenses();
     Expense getLastExpense();
+    List<Expense> getAllExpenses(int month);
 }
