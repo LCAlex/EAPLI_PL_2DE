@@ -7,6 +7,7 @@ package Presentation;
 
 import Controllers.ShowTotalExpensesController;
 import eapli.util.Console;
+import java.math.BigDecimal;
 
 /**
  *
@@ -19,8 +20,10 @@ public class ShowTotalExpensesUI {
     
      public void loop() {
             int op;
+            BigDecimal total;
             ShowTotalExpensesController controller = new ShowTotalExpensesController();
             op = Console.readInteger("Insert mouth");
-            controller.showExpenses(op);
+            total=controller.showExpenses(op);
+            System.out.println("No mes "+op+" teve um gasto de "+total+"€");
      }
 }
