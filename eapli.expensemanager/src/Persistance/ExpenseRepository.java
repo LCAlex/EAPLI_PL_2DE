@@ -55,7 +55,7 @@ public class ExpenseRepository implements IExpenseRepository{
     public List<Expense> getAllExpenses(int month) {
         List<Expense> temp = new ArrayList<>();
         for(Expense exp:listExpense){
-            if(exp.getDateOccurred().getMonth()==month){
+            if(exp.getExpenseMonth()==month){
                 temp.add(exp);
             }
         }
