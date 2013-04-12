@@ -61,4 +61,13 @@ public class ExpenseRepository implements IExpenseRepository{
         }
         return temp;
     }
+    public List<Expense> getAllExpensesWeek(int week, int year) {
+        List<Expense> temp = new ArrayList<>();
+        for(Expense exp:listExpense){
+            if(exp.getExpenseWeek()==week && exp.getExpenseYear()==year){
+                temp.add(exp);
+            }
+        }
+        return temp;
+    }
 }
