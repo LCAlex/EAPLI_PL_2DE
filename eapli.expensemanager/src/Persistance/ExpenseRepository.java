@@ -5,6 +5,7 @@
 package Persistance;
 
 import Model.Expense;
+import Model.ExpenseRecord;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -51,7 +52,22 @@ public class ExpenseRepository implements IExpenseRepository{
         return copy;
     }
 
-    public List<Expense> getAllExpenses(int month) {
-        throw new UnsupportedOperationException("Not yet implemented");
+    public List<Expense> getAllExpenses(int month, int year) {
+        List<Expense> temp = new ArrayList<>();
+        for(Expense exp:listExpense){
+            if(exp.getExpenseMonth()==month && exp.getExpenseYear()==year){
+                temp.add(exp);
+            }
+        }
+        return temp;
+    }
+    public List<Expense> getAllExpensesWeek(int week, int year) {
+        List<Expense> temp = new ArrayList<>();
+        for(Expense exp:listExpense){
+            if(exp.getExpenseWeek()==week && exp.getExpenseYear()==year){
+                temp.add(exp);
+            }
+        }
+        return temp;
     }
 }

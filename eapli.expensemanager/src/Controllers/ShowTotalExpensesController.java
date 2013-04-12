@@ -21,10 +21,10 @@ public class ShowTotalExpensesController {
     public ShowTotalExpensesController(){
     }
     
-    public BigDecimal showExpenses(int month){
+    public BigDecimal showExpenses(int month, int year){
         ExpenseRepository rep = new ExpenseRepository();
-        list=rep.getAllExpenses(month);
-        ExpenseRecord rec = new ExpenseRecord();
+        list=rep.getAllExpenses(month, year);
+        ExpenseRecord rec = new ExpenseRecord(list);
         return rec.getTotal();
     }
     
