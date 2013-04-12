@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author Ruben Ferreira
  */
-public class PaymentMeansRepository {
+public class PaymentMeansRepository implements IPaymentMeansRepository{
     
      private static List<PaymentMean> listPayMeans = new ArrayList<>();
 
@@ -33,6 +33,10 @@ public class PaymentMeansRepository {
            System.out.println("- "+listPayMeans.get(i)+"\n");
        }
       System.out.println("\n");
+   }
+   
+   public List<PaymentMean> getListPayMeans(){
+       return listPayMeans;
    }
      
 }

@@ -13,7 +13,7 @@ import Persistance.IExpenseTypeRepository;
  * @author Barrakeiro
  */
 public class ExpenseTypeBootstrapper {
-        static{
+    static{
         IExpenseTypeRepository repo = new ExpenseTypeRepository();
         
         repo.saveExpenseType(new ExpenseType("Vestuario"));
