@@ -52,10 +52,10 @@ public class ExpenseRepository implements IExpenseRepository{
         return copy;
     }
 
-    public List<Expense> getAllExpenses(int month) {
+    public List<Expense> getAllExpenses(int month, int year) {
         List<Expense> temp = new ArrayList<>();
         for(Expense exp:listExpense){
-            if(exp.getExpenseMonth()==month){
+            if(exp.getExpenseMonth()==month && exp.getExpenseYear()==year){
                 temp.add(exp);
             }
         }
