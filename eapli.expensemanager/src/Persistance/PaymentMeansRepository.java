@@ -29,10 +29,20 @@ public class PaymentMeansRepository {
    
    public void showListPayMeans(){
        
-       for(int i=0; i < listPayMeans.size();i++){
-           System.out.println("- "+listPayMeans.get(i)+"\n");
+       if(listPayMeans.size() == 0)
+       {
+           System.out.println("LIST IS EMPTY!\n");
        }
-      System.out.println("\n");
+       else
+       {
+           for(int i=0; i < listPayMeans.size();i++)
+           { 
+               System.out.println("- "+listPayMeans.get(i).getClass().getName());  
+               System.out.println(listPayMeans.get(i));                 
+           }
+           System.out.println("\n");
+       }
+       
    }
      
 }

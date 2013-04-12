@@ -14,7 +14,6 @@ public class Check extends PaymentMean {
     
     int numero;
     String instBancaria;
-    Date data;
     
     public Check(){       
     }
@@ -26,7 +25,7 @@ public class Check extends PaymentMean {
   
        @Override
       public String toString(){   
-          String s = "\nNumero: "+numero+"\nInst. Bancaria: "+instBancaria+"\n";              
+          String s = "\nNumero: "+numero+"\nInst. Bancaria: "+instBancaria;              
           return super.toString()+s;
       
       }

@@ -24,7 +24,7 @@ public class DebitCard extends PaymentMean {
     
       @Override
       public String toString(){   
-          String s = "\nNumero: "+numero+"\nInst. Bancaria: "+instBancaria+"\nTipo: "+tipo+"\n";              
+          String s = "\nNumero: "+numero+"\nInst. Bancaria: "+instBancaria+"\nTipo: "+tipo;              
           return super.toString()+s;
       
       }

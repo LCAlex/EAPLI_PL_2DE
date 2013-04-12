@@ -13,13 +13,13 @@ import java.util.Date;
 public class CreditCard extends PaymentMean {
     
     Date dataVal;
-    long numero;
+    int numero;
     String instBancaria;
     String tipo;
     
     public CreditCard(){}
     
-    public CreditCard(Date dv, long n, String ib, String t){
+    public CreditCard(Date dv, int n, String ib, String t){
         dataVal = dv;
         numero = n;
         instBancaria = ib;
@@ -28,7 +28,7 @@ public class CreditCard extends PaymentMean {
     
     @Override
       public String toString(){   
-          String s = "\nNumero: "+numero+"\nInst. Bancaria: "+instBancaria+"\nTipo: "+tipo+"Data de Validade: "+dataVal+"\n";              
+          String s = "\nNumero: "+numero+"\nInst. Bancaria: "+instBancaria+"\nTipo: "+tipo+"Data de Validade: "+dataVal;              
           return super.toString()+s;
       
       }

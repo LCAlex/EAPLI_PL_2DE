@@ -27,25 +27,28 @@ public class PaymentMeansController {
         
     }
     
-    void registerCash() {
+     public void registerCash() {
         Cash c = new Cash();
         pmr.registerPaymentMean(c);
      } 
     
-    void registerCheck(int num, String desc){
+     public void registerCheck(int num, String desc){
         Check c = new Check(num, desc);
         pmr.registerPaymentMean(c);
     }
     
-    void registerCCard(Date dv,long num, String ib, String tipo){
+     public void registerCCard(Date dv,int num, String ib, String tipo){
         CreditCard cc = new CreditCard(dv, num, ib, tipo);
         pmr.registerPaymentMean(cc);
     }
     
-    void registerDCard(long num, String ib, String tipo){
+     public void registerDCard(int num, String ib, String tipo){
         DebitCard dc = new DebitCard(num, ib, tipo);  
         pmr.registerPaymentMean(dc);
     }
     
+    public void getPaymentMeansList(){
+        pmr.showListPayMeans();
+    }
     
 }
