@@ -53,7 +53,6 @@ class MainMenu {
             System.out.println("2. Show expenses");
             //System.out.println("3. Register an expense type");
             System.out.println("3. Register a payment mean");
-
             System.out.println("4. Show Total Expenses by month");
             System.out.println("0. Exit\n\n");
 

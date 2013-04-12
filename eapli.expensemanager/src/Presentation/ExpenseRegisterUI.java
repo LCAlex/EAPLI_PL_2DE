@@ -28,7 +28,6 @@ public class ExpenseRegisterUI {
             Date date = Console.readDate("When (dd-MM-yyyy):");
             double value = Console.readDouble("Amount:");
             
-
             /*
             ExpenseTypeRepository expTypeRep = new ExpenseTypeRepository(); ---> Deve ser o controlador a aceder a esta informação
             List<ExpenseType> list = expTypeRep.getAllExpenseTypes(); ---> Deve ser o controlador a aceder a esta informação
@@ -57,7 +56,7 @@ public class ExpenseRegisterUI {
             System.out.println("expense recorded.");
       }
       
-
+      
        private void displayExpenseTypeList(List<ExpenseType> list) {
             int i=0;
             System.out.println("List of Expense Types");
