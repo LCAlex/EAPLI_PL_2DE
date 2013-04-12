@@ -97,5 +97,14 @@ public class Expense {
         Calendar cal = DateTime.dateToCalendar(dateOccurred);
         return cal.MONTH;
     }
+    public int getExpenseYear(){
+        Calendar cal = DateTime.dateToCalendar(dateOccurred);
+        return cal.YEAR;
+    }
+    
+    public int getExpenseWeek(){
+        Calendar cal = DateTime.dateToCalendar(dateOccurred);
+        return cal.WEEK_OF_YEAR;
+    }
       
 }
