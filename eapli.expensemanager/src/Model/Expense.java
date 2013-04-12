@@ -21,14 +21,15 @@ public class Expense {
       private BigDecimal amount;
       private Date dateOccurred;
       private ExpenseType expType;
-      private String payment;
+      private PaymentMean pm;
       
 
       protected Expense() {
       }
 
-      public Expense(String description, Date dateOccurred, BigDecimal amount, ExpenseType expType, String payment) {
-            if (description == null || dateOccurred == null || amount == null || expType == null || payment == null) {
+
+      public Expense(String description, Date dateOccurred, BigDecimal amount, ExpenseType expType, PaymentMean pm) {
+            if (description == null || dateOccurred == null || amount == null || expType == null || pm == null) {
                   throw new IllegalArgumentException();
             }
             // cannot record a negative expense or a zero EUR expense
@@ -39,11 +40,12 @@ public class Expense {
             this.dateOccurred = dateOccurred;
             this.amount = amount;
             this.expType = expType;
-            this.payment = payment;
+            this.pm = pm;
       }
 
-      public Expense(String description, int year, int month, int day, BigDecimal amount, ExpenseType expType, String payment){
-          this(description, DateTime.newDate(year, month, day), amount, expType, payment);
+
+      public Expense(String description, int year, int month, int day, BigDecimal amount, ExpenseType expType, PaymentMean pm){
+          this(description, DateTime.newDate(year, month, day), amount, expType, pm);
       }
       
       public Expense(Expense exp){
@@ -51,10 +53,10 @@ public class Expense {
                    throw new IllegalArgumentException();
             }
           this.description=exp.description;
-          this.dateOccurred = dateOccurred;
+          this.dateOccurred = exp.dateOccurred;
           this.amount=exp.amount;
           this.expType = exp.expType;
-          this.payment = exp.payment;
+          this.pm = exp.pm;
       }
       
       @Override
@@ -65,7 +67,7 @@ public class Expense {
                      "\nDate:" + this.dateOccurred.toString() +
                      "\nAmount:" + n.format(doubleAmount) +
                      "\nExpenseType:" + this.expType.toString() +
-                     "\nPayment:" + this.payment;
+                     "\nPayment:" + this.pm.toString();
           return s;
       }
 

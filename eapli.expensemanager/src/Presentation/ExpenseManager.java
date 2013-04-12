@@ -4,8 +4,8 @@
  */
 package Presentation;
 
-import Eapli.ExpensesBootstrapper;
-import Eapli.ExpenseTypeBootstrapper;
+/*import Eapli.ExpensesBootstrapper;
+import Eapli.ExpenseTypeBootstrapper;*/
 
 /**
  *
@@ -18,12 +18,12 @@ public class ExpenseManager {
        */
       public static void main(String[] args) {
             // TODO code application logic here
-            ExpenseTypeBootstrapper bootType;
+           /* ExpenseTypeBootstrapper bootType;
             bootType = new ExpenseTypeBootstrapper();
           
             ExpensesBootstrapper boot;
             boot = new ExpensesBootstrapper();
             MainMenu menu=new MainMenu();
-            menu.mainLoop();
+            menu.mainLoop();*/
       }
 }
