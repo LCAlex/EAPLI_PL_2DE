@@ -43,7 +43,6 @@ public class Expense {
             this.pm = pm;
       }
 
-
       public Expense(String description, int year, int month, int day, BigDecimal amount, ExpenseType expType, PaymentMean pm){
           this(description, DateTime.newDate(year, month, day), amount, expType, pm);
       }
