@@ -16,4 +16,5 @@ public interface IExpenseRepository {
     List<Expense> getAllExpenses();
     Expense getLastExpense();
     List<Expense> getAllExpenses(int month, int year);
+    List<Expense> getAllExpensesWeek(int week, int year);
 }
