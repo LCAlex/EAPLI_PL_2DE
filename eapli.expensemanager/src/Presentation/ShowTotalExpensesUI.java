@@ -25,7 +25,7 @@ public class ShowTotalExpensesUI {
             BigDecimal total;
             ShowTotalExpensesController controller = new ShowTotalExpensesController();
             month = Console.readInteger("Insert month");
-            year = Console.readInteger("Insert month");
+            year = Console.readInteger("Insert year");
             total=controller.showExpenses(month,year);
             System.out.println("No mes "+month+" teve um gasto de "+total+"€ no ano"+year);
      }
