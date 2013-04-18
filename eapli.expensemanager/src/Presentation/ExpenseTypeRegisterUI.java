@@ -24,13 +24,13 @@ public class ExpenseTypeRegisterUI{
         do{
             System.out.println("* * *  REGISTER AN EXPENSE TYPE  * * *\n");
             controller.obtainList();
-            name = Console.readLine("Name: ");
+            name = Console.readLine("\n\nInsert the Expense Type Name: ");
             if(name.equalsIgnoreCase("end")){
                 // Do nothing
             }else{
                 controller.registerExpenseType(name);
             }
-        }while(name.equalsIgnoreCase("end"));
+        }while(!name.equalsIgnoreCase("end"));
      }
 
     public void displayList(List <ExpenseType> expenseTypeList) {

@@ -20,11 +20,24 @@ public class ExpenseTypeRepository implements IExpenseTypeRepository{
     public ExpenseTypeRepository(){}
     
     public void saveExpenseType(ExpenseType et){
+        boolean iguais=false;
+        
+        for(int i=0;i<listExpenseType.size();i++){
+            if(et.getName().equalsIgnoreCase(listExpenseType.get(i).getName())){
+                iguais=true;
+            }
+        }
+        
         if (et==null) {
             throw new IllegalArgumentException();
         }
-        listExpenseType.add(et);
-        System.out.println("Tipo de Despesa adicionado com sucesso.");
+            
+        if(iguais==true){
+            System.out.println("Tipo de Despesa já existente. Por favor, insira um nome diferente.");
+        }else{
+            listExpenseType.add(et);
+            System.out.println("Tipo de Despesa adicionado com sucesso.");
+        }
     }
     
     public List<ExpenseType> getAllExpenseTypes() {

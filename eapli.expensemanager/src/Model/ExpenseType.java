@@ -30,4 +30,7 @@ public class ExpenseType {
         return s;
     }
     
+    public String getName(){
+        return this.name;
+    }
 }
