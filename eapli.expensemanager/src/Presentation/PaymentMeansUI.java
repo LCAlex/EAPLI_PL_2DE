@@ -87,9 +87,7 @@ public class PaymentMeansUI {
             System.out.println("* * *  WHAT TYPE OF MEAN DO YOU WISH TO ADD?  * * *");
             System.out.println("===================\n"); //para efeito de teste está implementado assim
             PaymentTypes pmt = new PaymentTypes();
-            for(int i=0;i<pmt.getList().size();i++){
-                System.out.println(i+". "+pmt.getList().get(i));
-            }
+            pmt.getList();
             System.out.println("0. Exit\n\n");
 
             int option = Console.readInteger("Please choose an option");
