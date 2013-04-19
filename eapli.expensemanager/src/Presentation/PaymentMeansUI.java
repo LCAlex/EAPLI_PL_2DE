@@ -6,6 +6,7 @@ package Presentation;
 
 import Controllers.PaymentMeansController;
 import Model.Cash;
+import Model.PaymentTypes;
 import eapli.util.Console;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -85,10 +86,10 @@ public class PaymentMeansUI {
             
             System.out.println("* * *  WHAT TYPE OF MEAN DO YOU WISH TO ADD?  * * *");
             System.out.println("===================\n"); //para efeito de teste está implementado assim
-            System.out.println("1. Cash");          // aqui deverá estar um método que obtém 
-            System.out.println("2. Check");         //todos os tipos da classe PaymentTypes
-            System.out.println("3. Debit Card");
-            System.out.println("4. Credit Card");
+            PaymentTypes pmt = new PaymentTypes();
+            for(int i=0;i<pmt.getList().size();i++){
+                System.out.println(i+". "+pmt.getList().get(i));
+            }
             System.out.println("0. Exit\n\n");
 
             int option = Console.readInteger("Please choose an option");
