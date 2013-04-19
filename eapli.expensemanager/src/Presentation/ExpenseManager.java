@@ -6,7 +6,7 @@ package Presentation;
 
 //import Eapli.ExpensesBootstrapper;
 
-import Eapli.Bootstrapper;
+import Eapli.BootstrapperClass;
 import Eapli.ExpenseTypeBootstrapper;
 
 //import Eapli.ExpenseTypeBootstrapper;
@@ -25,8 +25,8 @@ public class ExpenseManager {
             ExpenseTypeBootstrapper bootType;
             bootType = new ExpenseTypeBootstrapper();
           
-            Bootstrapper boot;
-            boot = new Bootstrapper();
+            BootstrapperClass boot;
+            boot = new BootstrapperClass();
             MainMenu menu=new MainMenu();
             menu.mainLoop();
       }

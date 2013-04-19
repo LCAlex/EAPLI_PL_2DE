@@ -23,7 +23,7 @@ import java.util.Date;
  *
  * @author Tecnica21
  */
-public class Bootstrapper {
+public class BootstrapperClass {
     static{
         inicializeExpenseTypes();
         inicializePaymentMeans();
