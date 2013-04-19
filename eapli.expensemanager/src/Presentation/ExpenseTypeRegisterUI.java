@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
 import Controllers.ExpenseTypeRegisterController;
 import Model.ExpenseType;
 import eapli.util.Console;
@@ -14,23 +15,33 @@ import java.util.List;
  *
  * @author Barrakeiro
  */
-public class ExpenseTypeRegisterUI{
+public class ExpenseTypeRegisterUI extends BaseUI{
     ExpenseTypeRegisterController controller = new ExpenseTypeRegisterController();
+    
+    @Override
+    public void header(){
+        System.out.println("* * *  REGISTER AN EXPENSE TYPE  * * *\n");
+    }
+    
+    @Override
+    public BaseController controller(){
+        return controller;
+    }
     
     public ExpenseTypeRegisterUI() {}
 
+    @Override
     public void run() {
         String name;
         do{
-            System.out.println("* * *  REGISTER AN EXPENSE TYPE  * * *\n");
             controller.obtainList();
-            name = Console.readLine("Name: ");
+            name = Console.readLine("\n\nInsert the Expense Type Name: ");
             if(name.equalsIgnoreCase("end")){
                 // Do nothing
             }else{
                 controller.registerExpenseType(name);
             }
-        }while(name.equalsIgnoreCase("end"));
+        }while(!name.equalsIgnoreCase("end"));
      }
 
     public void displayList(List <ExpenseType> expenseTypeList) {
