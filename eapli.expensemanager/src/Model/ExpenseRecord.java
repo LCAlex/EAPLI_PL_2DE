@@ -29,4 +29,11 @@ public class ExpenseRecord {
         }
         return total;        
     }
+
+    @Override
+    public String toString() {
+	return this.list.toString();
+    }
+    
+    
 }

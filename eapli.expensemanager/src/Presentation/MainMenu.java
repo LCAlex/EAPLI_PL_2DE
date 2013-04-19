@@ -38,7 +38,7 @@ class MainMenu {
 
                       case 4:
                           ShowTotalExpensesUI showTotalExpensesUI = new ShowTotalExpensesUI();
-                          showTotalExpensesUI.loop();
+                          showTotalExpensesUI.run();
                           break;
                           
                       case 5:

@@ -17,6 +17,12 @@ public class ExpensesperMonthDTO {
     private BigDecimal  ammount;
     private ExpenseRecord expenses;
     
+    /** 
+     * 
+     * @param expense_type
+     * @param ammount
+     * @param expenses 
+     */
     public ExpensesperMonthDTO(String expense_type, BigDecimal ammount, ExpenseRecord expenses)
     {
         this.expense_type = expense_type;
@@ -38,5 +44,11 @@ public class ExpensesperMonthDTO {
     {
         return this.expenses;
     }
+
+    @Override
+    public String toString() {
+	return "[Total " + expense_type + ": €" + ammount + "]\n" + "Despesas: \n" + expenses;
+    }
+    
     
 }

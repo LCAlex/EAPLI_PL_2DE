@@ -12,6 +12,9 @@ import java.util.List;
 import ModelView.ExpensesperMonthDTO;
 import Persistance.ExpenseTypeRepository;
 import Model.ExpenseType;
+import ModelView.ExpenseTotal;
+import Persistance.IExpenseRepository;
+import Persistance.IExpenseTypeRepository;
 import java.util.ArrayList;
 /**
  *
@@ -56,27 +59,39 @@ public class ShowTotalExpensesController {
             
             for (ExpenseType e: expenseTypes)
             {
-                /* Nome do tipo de despesa e */
-                String expenseTypeName = e.getName();
-                
                 /* Registo de despesas do tipo e */
                 ExpenseRecord temp;
-                temp = new ExpenseRecord(eRepository.getAllExpensesofType(month, year, expenseTypeName));
+		temp = new ExpenseRecord(eRepository.getAllExpensesByType(month, year, e));
                 
                 /* Total do tipo de despesa e */
                 BigDecimal expenseTypeAmmount = temp.getTotal();
                 
                 /* Objecto DTO que guarda o (nome, total e lista de despesas) do tipo de despesa e */
                 ExpensesperMonthDTO myDTO;
-                myDTO = new ExpensesperMonthDTO(expenseTypeName, expenseTypeAmmount, temp);
+                myDTO = new ExpensesperMonthDTO(e.getName(), expenseTypeAmmount, temp);
                 
                 resultList.add(myDTO);
             }
         }
-        else 
+        else
             return null;
         
         return resultList;
+    }
+    
+        public List<ExpenseTotal> showExpenseByTypes(int month, int year){
+        IExpenseTypeRepository typeRep = new ExpenseTypeRepository();
+        IExpenseRepository rep = new ExpenseRepository();
+        ExpenseRecord rec = new ExpenseRecord();
+        List<ExpenseType> types = typeRep.getAllExpenseTypes();
+        List<ExpenseTotal> temp = new ArrayList();
+        for(ExpenseType expType:types){
+            rec = new ExpenseRecord(rep.getAllExpensesByType(month, year, expType));
+            ExpenseTotal expT = new ExpenseTotal(expType.getName(), rec.getTotal());
+            temp.add(expT);
+        }
+        return temp;
+        
     }
     
 }
