@@ -13,17 +13,19 @@ import java.util.List;
 public class PaymentTypes {
     private List<String> list;
     public void PaymentTypes(){
-        getList().add("Cash");
-        getList().add("Check");
-        getList().add("Debit Card");
-        getList().add("Credit Card");
+        list.add("Cash");
+        list.add("Check");
+        list.add("Debit Card");
+        list.add("Credit Card");
     }
 
     /**
      * @return the list
      */
-    public List<String> getList() {
-        return list;
+    public void getList() {
+           for(int i=0;i<list.size();i++){
+                System.out.println(i+". "+list.get(i));
+            }
     }
 
 
