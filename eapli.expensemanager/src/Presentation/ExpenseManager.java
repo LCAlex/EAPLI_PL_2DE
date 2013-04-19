@@ -7,7 +7,6 @@ package Presentation;
 //import Eapli.ExpensesBootstrapper;
 
 import Eapli.BootstrapperClass;
-import Eapli.ExpenseTypeBootstrapper;
 
 //import Eapli.ExpenseTypeBootstrapper;
 
@@ -22,8 +21,6 @@ public class ExpenseManager {
        */
       public static void main(String[] args) {
             // TODO code application logic here
-            ExpenseTypeBootstrapper bootType;
-            bootType = new ExpenseTypeBootstrapper();
           
             BootstrapperClass boot;
             boot = new BootstrapperClass();
