@@ -9,28 +9,37 @@ package Model;
  * @author Tecnica21
  */
 public class ExpenseType {
+
     private String name;
-    
-    protected ExpenseType(){}
-    
-    public ExpenseType(String name){
+
+    protected ExpenseType() {
+    }
+
+    public ExpenseType(String name) {
         this.name = name;
     }
-    
-    public ExpenseType(ExpenseType et){
-        if(et==null){
+
+    public ExpenseType(ExpenseType et) {
+        if (et == null) {
             throw new IllegalArgumentException();
         }
-        this.name=et.name;
+        this.name = et.name;
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         String s = "Name:" + this.name;
         return s;
     }
-    
-    public String getName(){
+
+    public String getName() {
         return this.name;
+    }
+
+    public boolean ExpenseTypeEquals(ExpenseType type) {
+        if (this.name.equals(type.name)) {
+            return true;
+        }
+        return false;
     }
 }

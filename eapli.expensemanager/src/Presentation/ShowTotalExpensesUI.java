@@ -5,6 +5,7 @@
 package Presentation;
 
 
+import Controllers.BaseController;
 import Controllers.ShowTotalExpensesController;
 import eapli.util.Console;
 import eapli.util.DateTime;
@@ -15,12 +16,25 @@ import java.util.Calendar;
  *
  * @author Rui Damiao
  */
-public class ShowTotalExpensesUI {
+public class ShowTotalExpensesUI extends BaseUI{
+    private BaseController basecontroller=new BaseController();
     
     public ShowTotalExpensesUI(){
     }
     
-     public void loop() {
+  
+    @Override
+    protected BaseController controller() {
+        return basecontroller;
+    }
+
+    @Override
+    public void header() {
+        System.out.println("|*** SHOW TOTAL EXPENSES ***|");    
+    }
+    
+    @Override
+    public void run() {
             int month,year;
             BigDecimal total;
             ShowTotalExpensesController controller = new ShowTotalExpensesController();
@@ -29,4 +43,5 @@ public class ShowTotalExpensesUI {
             total=controller.showExpenses(month,year);
             System.out.println("No mes "+month+" teve um gasto de "+total+"€ no ano"+year);
      }
+
 }

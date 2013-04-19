@@ -6,6 +6,7 @@ package Persistance;
 
 import Model.Expense;
 import Model.ExpenseRecord;
+import Model.ExpenseType;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -65,6 +66,15 @@ public class ExpenseRepository implements IExpenseRepository{
         List<Expense> temp = new ArrayList<>();
         for(Expense exp:listExpense){
             if(exp.getExpenseWeek()==week && exp.getExpenseYear()==year){
+                temp.add(exp);
+            }
+        }
+        return temp;
+    }
+        public List<Expense> getAllExpensesByType(int month, int year, ExpenseType type) {
+        List<Expense> temp = new ArrayList<>();
+        for(Expense exp:listExpense){
+            if(exp.getExpenseMonth()==month && exp.getExpenseYear()==year && exp.getExpType().ExpenseTypeEquals(type)){
                 temp.add(exp);
             }
         }
