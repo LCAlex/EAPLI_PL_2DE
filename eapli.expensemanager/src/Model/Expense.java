@@ -107,5 +107,8 @@ public class Expense {
         Calendar cal = DateTime.dateToCalendar(dateOccurred);
         return cal.WEEK_OF_YEAR;
     }
-      
+    
+    public ExpenseType getExpType(){
+       return expType;
+   }
 }
