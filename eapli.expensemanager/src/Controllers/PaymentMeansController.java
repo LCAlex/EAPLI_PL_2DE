@@ -14,6 +14,7 @@ import Persistance.ExpenseRepository;
 import Persistance.PaymentMeansRepository;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -27,8 +28,8 @@ public class PaymentMeansController {
         
     }
     
-     public void registerCash() {
-        Cash c = new Cash();
+     public void registerCash(String curr) {
+        Cash c = new Cash(curr);
         pmr.registerPaymentMean(c);
      } 
     
@@ -49,6 +50,10 @@ public class PaymentMeansController {
     
     public void getPaymentMeansList(){
         pmr.showListPayMeans();
+    }
+    
+    public List<PaymentMean> getListPaymentMeans(){
+        return pmr.getListPayMeans();
     }
     
 }
