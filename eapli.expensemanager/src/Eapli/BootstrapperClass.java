@@ -42,7 +42,7 @@ public class BootstrapperClass {
     private static void inicializePaymentMeans(){
         IPaymentMeansRepository repoPay = new PaymentMeansRepository();
         
-        repoPay.registerPaymentMean(new Cash());
+        repoPay.registerPaymentMean(new Cash("EUR"));
         repoPay.registerPaymentMean(new Check(132514, "CGD"));
         repoPay.registerPaymentMean(new CreditCard(new Date(),84515412,"BCP","VISA"));
         repoPay.registerPaymentMean(new DebitCard(2342335,"Montepio","MasterCard"));
