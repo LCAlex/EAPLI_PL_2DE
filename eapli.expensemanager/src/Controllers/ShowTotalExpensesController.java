@@ -47,12 +47,11 @@ public class ShowTotalExpensesController {
         
         // Lista com todos os tipos de despesas 
         List<ExpenseType> expenseTypes = eType.getAllExpenseTypes();
-        
          /* Lista de ExpensesperMonthDTO que, para cada tipo de despesa, guarda:
           * nome
           * total
           * lista das despesas */
-        List<ExpensesperMonthDTO> resultList = new ArrayList();
+        List<ExpensesperMonthDTO> resultList = new ArrayList<>();
         
         if (expenseTypes != null && !expenseTypes.isEmpty()) /* Existe(m) tipo(s) de despesa */
         {
