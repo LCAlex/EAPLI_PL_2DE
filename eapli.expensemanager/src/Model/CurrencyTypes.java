@@ -26,7 +26,7 @@ public class CurrencyTypes {
     public List<String> getList() {
         return list;
     }
-    public String getCurrency(){
+    public String getCurrencyList(){
         System.out.println("* * *  WHAT TYPE OF CURRENCY?  * * *");
         System.out.println("===================\n");
         for(int i=0;i<list.size();i++){

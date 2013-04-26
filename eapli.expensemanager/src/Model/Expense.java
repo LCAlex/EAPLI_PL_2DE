@@ -66,7 +66,8 @@ public class Expense {
                      "\nDate:" + this.dateOccurred.toString() +
                      "\nAmount:" + n.format(doubleAmount) +
                      "\nExpenseType:" + this.expType.toString() +
-                     "\nPayment:" + this.pm.toString();
+                     "\nPayment:" + this.pm.toString() +
+		     "\n";
           return s;
       }
 

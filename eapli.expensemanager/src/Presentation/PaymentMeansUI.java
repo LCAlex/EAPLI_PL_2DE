@@ -6,10 +6,14 @@ package Presentation;
 
 import Controllers.PaymentMeansController;
 import Model.Cash;
+import Model.CurrencyTypes;
+import Model.PaymentMean;
 import Model.PaymentTypes;
 import eapli.util.Console;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -18,6 +22,9 @@ import java.util.Date;
 public class PaymentMeansUI {
     
      PaymentMeansController pmc = new PaymentMeansController();
+     CurrencyTypes ct = new CurrencyTypes();
+     
+     private static List<PaymentMean> listPayMeansAUX = new ArrayList<>();
    
      public PaymentMeansUI() {
       
@@ -37,7 +44,17 @@ public class PaymentMeansUI {
                               break;
                         case 1: 
                               System.out.println("You chose to add Cash:");
-                              pmc.registerCash();
+                              String currency = ct.getCurrencyList();
+                              PaymentMean aux;
+                              listPayMeansAUX = pmc.getListPaymentMeans();
+                              for(int i=0; i < listPayMeansAUX.size();i++){
+                                  aux = listPayMeansAUX.get(i);
+                                  if (aux instanceof Cash){
+                                      System.out.println("Cash already exists!");
+                                      break;  
+                                  }
+                              }                            
+                              pmc.registerCash(currency);
                               System.out.println("Payment mean added to the repository.");
                               break;
                         case 2:
