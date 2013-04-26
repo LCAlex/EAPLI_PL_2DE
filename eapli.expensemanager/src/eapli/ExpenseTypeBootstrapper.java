@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Eapli;
+package eapli;
 
 import Model.ExpenseType;
 import Persistance.ExpenseTypeRepository;
