@@ -18,7 +18,8 @@ public class Check extends PaymentMean {
     public Check(){       
     }
     
-    public Check(int n, String ib){
+    public Check(int i,int n, String ib){
+        super(i);
         numero = n;
         instBancaria = ib;
     }

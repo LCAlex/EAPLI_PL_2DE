@@ -23,6 +23,8 @@ public class PaymentMeansUI {
     
      PaymentMeansController pmc = new PaymentMeansController();
      CurrencyTypes ct = new CurrencyTypes();
+     static int ID = 0;
+     int id;
      
      private static List<PaymentMean> listPayMeansAUX = new ArrayList<>();
    
@@ -53,9 +55,10 @@ public class PaymentMeansUI {
                                       System.out.println("Cash already exists!");
                                       break;  
                                   }
-                              }                            
-                              pmc.registerCash(currency);
+                              }
+                              pmc.registerCash(ID,currency);
                               System.out.println("Payment mean added to the repository.");
+                              ID++;
                               break;
                         case 2:
                               System.out.println("You chose to add a Check:");
@@ -63,8 +66,9 @@ public class PaymentMeansUI {
                               String instBanc = Console.readLine("Bank:");
                               int num = Console.readInteger("Check Number:");
                               
-                              pmc.registerCheck(num, instBanc);
+                              pmc.registerCheck(ID,num, instBanc);
                               System.out.println("Payment mean added to the repository.");
+                              ID++;
                               break;
                         case 3:
                               System.out.println("You chose to add a Debit Card:");
@@ -73,8 +77,9 @@ public class PaymentMeansUI {
                               String tipo = Console.readLine("Type:");
                               int num1 = Console.readInteger("Card Number:");
                               
-                              pmc.registerDCard(num1,instB,tipo);
+                              pmc.registerDCard(ID,num1,instB,tipo);
                               System.out.println("Payment mean added to the repository.");
+                              ID++;
                               break;
                         case 4:
                               System.out.println("You chose to add a Credit Card:");
@@ -84,8 +89,9 @@ public class PaymentMeansUI {
                               int num2 = Console.readInteger("Card Number:");
                               Date d1 = Console.readDate("Expiration Date: ");
                               
-                              pmc.registerCCard(d1,num2,instBa,tipo1);
+                              pmc.registerCCard(ID,d1,num2,instBa,tipo1);
                               System.out.println("Payment mean added to the repository.");
+                              ID++;
                               break;
                         default:
                             break;

@@ -10,12 +10,13 @@ package Model;
  */
 public abstract class PaymentMean {
     
-    static int ID = 0;
+    //static int ID = 0;
     int id;
     
-    public PaymentMean(){
-        ID++;
-        id = ID;
+    public PaymentMean(){}
+    
+    public PaymentMean(int i){
+        id = i;
     }
     
      @Override
