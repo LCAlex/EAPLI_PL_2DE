@@ -5,7 +5,7 @@
 package eapli;
 
 import Model.ExpenseType;
-import Persistance.ExpenseTypeRepository;
+import Persistance.IM.ExpenseTypeRepository;
 import Persistance.IExpenseTypeRepository;
 
 /**

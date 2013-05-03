@@ -10,12 +10,12 @@ import Model.CreditCard;
 import Model.DebitCard;
 import Model.Expense;
 import Model.ExpenseType;
-import Persistance.ExpenseRepository;
-import Persistance.ExpenseTypeRepository;
+import Persistance.IM.ExpenseRepository;
+import Persistance.IM.ExpenseTypeRepository;
 import Persistance.IExpenseRepository;
 import Persistance.IExpenseTypeRepository;
 import Persistance.IPaymentMeansRepository;
-import Persistance.PaymentMeansRepository;
+import Persistance.IM.PaymentMeansRepository;
 import java.math.BigDecimal;
 import java.util.Date;
 
