@@ -19,7 +19,8 @@ public class CreditCard extends PaymentMean {
     
     public CreditCard(){}
     
-    public CreditCard(Date dv, int n, String ib, String t){
+    public CreditCard(int i,Date dv, int n, String ib, String t){
+        super(i);
         dataVal = dv;
         numero = n;
         instBancaria = ib;
