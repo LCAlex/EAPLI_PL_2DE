@@ -6,7 +6,7 @@ package Controllers;
 
 import Presentation.ExpenseTypeRegisterUI;
 import Model.ExpenseType;
-import Persistance.ExpenseTypeRepository;
+import Persistance.IM.ExpenseTypeRepository;
 import java.util.List;
 
 /**

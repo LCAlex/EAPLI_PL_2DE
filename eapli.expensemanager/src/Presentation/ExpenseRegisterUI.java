@@ -5,7 +5,7 @@
 package Presentation;
 
 import Model.ExpenseType;
-import Persistance.ExpenseTypeRepository;
+import Persistance.IM.ExpenseTypeRepository;
 import Controllers.ExpenseRegisterController;
 import Model.PaymentMean;
 import eapli.util.Console;

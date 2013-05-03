@@ -8,8 +8,15 @@ package Model;
  *
  * @author Tecnica21
  */
+
+//@Entity
+//@Table(name="EXPENSE_TYPE_INFO")
 public class ExpenseType {
 
+    //@Id
+    //@Column(name="ID")
+    //private int expenseTypeId;
+    
     private String name;
 
     protected ExpenseType() {

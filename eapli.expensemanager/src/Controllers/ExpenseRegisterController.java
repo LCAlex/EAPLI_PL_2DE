@@ -6,9 +6,9 @@ package Controllers;
 
 
 import Model.*;
-import Persistance.ExpenseRepository;
-import Persistance.ExpenseTypeRepository;
-import Persistance.PaymentMeansRepository;
+import Persistance.IM.ExpenseRepository;
+import Persistance.IM.ExpenseTypeRepository;
+import Persistance.IM.PaymentMeansRepository;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
