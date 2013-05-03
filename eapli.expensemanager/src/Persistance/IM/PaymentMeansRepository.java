@@ -2,9 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Persistance;
+package Persistance.IM;
 
 import Model.PaymentMean;
+import Persistance.IPaymentMeansRepository;
 import java.util.ArrayList;
 import java.util.List;
 

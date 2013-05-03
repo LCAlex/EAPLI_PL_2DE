@@ -6,11 +6,11 @@ package Controllers;
 
 import Model.Expense;
 import Model.ExpenseRecord;
-import Persistance.ExpenseRepository;
+import Persistance.IM.ExpenseRepository;
 import java.math.BigDecimal;
 import java.util.List;
 import ModelView.ExpensesperMonthDTO;
-import Persistance.ExpenseTypeRepository;
+import Persistance.IM.ExpenseTypeRepository;
 import Model.ExpenseType;
 import ModelView.ExpenseTotal;
 import Persistance.IExpenseRepository;

@@ -5,7 +5,7 @@
 package Controllers;
 
 import Model.Expense;
-import Persistance.ExpenseRepository;
+import Persistance.IM.ExpenseRepository;
 import java.util.List;
 
 /**
