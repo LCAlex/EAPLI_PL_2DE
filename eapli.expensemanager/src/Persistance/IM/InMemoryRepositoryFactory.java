@@ -8,6 +8,7 @@ package Persistance.IM;
 import Persistance.IExpenseRepository;
 import Persistance.IExpenseTypeRepository;
 import Persistance.IPaymentMeansRepository;
+import Persistance.IRepositoryFactory;
 
 /**
  *
@@ -17,16 +18,16 @@ import Persistance.IPaymentMeansRepository;
 
     @Override
     public IExpenseRepository getExpenseRepository(){
-        return new Persistence.inmemory.ExpenseRepository;
+        return new Persistance.IM.ExpenseRepository();
     }
     
     @Override
     public IExpenseTypeRepository getExpenseTypeRepository(){
-        return new Persistence.inmemory.ExpenseTypeRepository;
+        return new Persistance.IM.ExpenseTypeRepository();
     }
      
     @Override
-    public IPaymentMeansRepository getPaymentMeansRepository(){
-        return new Persistence.inmemory.PaymentMeansRepository;
+    public IPaymentMeansRepository getPaymentMeanRepository(){
+        return new Persistance.IM.PaymentMeansRepository();
     }
 }*/
