@@ -13,7 +13,7 @@ import Persistance.IPaymentMeansRepository;
  *
  * @author Rui Damiao
  */
-public class InMemoryRepositoryFactory implements IRepositoryFactory{
+/*public class InMemoryRepositoryFactory implements IRepositoryFactory{
 
     @Override
     public IExpenseRepository getExpenseRepository(){
@@ -29,4 +29,4 @@ public class InMemoryRepositoryFactory implements IRepositoryFactory{
     public IPaymentMeansRepository getPaymentMeansRepository(){
         return new Persistence.inmemory.PaymentMeansRepository;
     }
-}
+}*/
