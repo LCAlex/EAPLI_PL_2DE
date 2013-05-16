@@ -16,7 +16,8 @@ public class DebitCard extends PaymentMean {
     
     public DebitCard(){}
     
-    public DebitCard(long n, String ib, String t){
+    public DebitCard(int i,long n, String ib, String t){
+        super(i);
         numero = n;
         instBancaria = ib;
         tipo = t;

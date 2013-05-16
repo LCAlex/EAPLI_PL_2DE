@@ -9,7 +9,7 @@ import eapli.util.Console;
  *
  * @author mcn
  */
-class MainMenu {
+public class MainMenu {
 
       public MainMenu() {
       }
@@ -69,5 +69,4 @@ class MainMenu {
             return option;
       }
 }
-
 

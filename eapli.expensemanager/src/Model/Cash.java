@@ -30,9 +30,9 @@ public class Cash extends PaymentMean{
     
     private String currency;
     
-   public Cash(String c)
+   public Cash(int i, String c)
    {
-      super();  
+      super(i);  
       currency = c;
    }
     
