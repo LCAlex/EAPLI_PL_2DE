@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Persistance.IM;
+package Persistance;
 
 
 import Persistance.IExpenseRepository;
@@ -14,7 +14,7 @@ import Persistance.IRepositoryFactory;
  *
  * @author Rui Damiao
  */
-/*public class InMemoryRepositoryFactory implements IRepositoryFactory{
+public class InMemoryRepositoryFactory implements IRepositoryFactory{
 
     @Override
     public IExpenseRepository getExpenseRepository(){
@@ -30,4 +30,4 @@ import Persistance.IRepositoryFactory;
     public IPaymentMeansRepository getPaymentMeanRepository(){
         return new Persistance.IM.PaymentMeansRepository();
     }
-}*/
+}
