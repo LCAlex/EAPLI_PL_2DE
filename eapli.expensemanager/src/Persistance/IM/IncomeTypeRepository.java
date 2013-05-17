@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class IncomeTypeRepository implements IIncomeTypeRepository{
     
-    private static List<IncomeType> listIncomeType= new ArrayList<>();
+    private static List<IncomeType> listIncomeType = new ArrayList<>();
     
     public IncomeTypeRepository(){}
     
@@ -41,12 +41,9 @@ public class IncomeTypeRepository implements IIncomeTypeRepository{
         }
     }
     
-    public List<IncomeType> getAllExpenseTypes() {
+    public List<IncomeType> getAllIncomeTypes() {
         return Collections.unmodifiableList(listIncomeType); // Retorna uma cópia da lista original
     }
 
-    @Override
-    public List<IncomeType> getAllIncomeTypes() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+
 }

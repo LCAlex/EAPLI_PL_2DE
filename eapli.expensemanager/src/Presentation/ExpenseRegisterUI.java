@@ -18,6 +18,7 @@ import java.util.List;
  * @author mcn
  */
 public class ExpenseRegisterUI {
+    
       ExpenseRegisterController controller = new ExpenseRegisterController();
 
       public ExpenseRegisterUI() {
