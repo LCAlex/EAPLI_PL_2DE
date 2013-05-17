@@ -63,6 +63,7 @@ public class MainMenu {
             System.out.println("4. Show Total Expenses by month");
             System.out.println("5. Register an expense type");
             System.out.println("6. Show Total Expenses by type per month");
+            System.out.println("7. Show Balance");
             System.out.println("0. Exit\n\n");
 
             int option = Console.readInteger("Please choose an option");
