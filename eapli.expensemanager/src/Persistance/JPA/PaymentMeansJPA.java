@@ -18,7 +18,7 @@ import javax.persistence.Query;
 
 /**
  *
- * @author Rui Damiao
+ * @author Catia Marques 1120066
  */
 public class PaymentMeansJPA extends JpaGeneric<PaymentMean, Long> implements IPaymentMeansRepository {
 
