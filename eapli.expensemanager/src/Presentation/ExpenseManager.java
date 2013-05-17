@@ -4,6 +4,8 @@
  */
 package Presentation;
 
+import eapli.BootstrapperClass;
+
 /**
  *
  * @author mcn
@@ -15,6 +17,7 @@ public class ExpenseManager {
        */
       public static void main(String[] args) {
           // TODO code application logic here
+          BootstrapperClass boot = new BootstrapperClass();
           MainMenu menu = new MainMenu();
           menu.mainLoop();
       }

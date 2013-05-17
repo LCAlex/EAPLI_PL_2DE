@@ -20,6 +20,7 @@ public class IncomeTypeRepository implements IIncomeTypeRepository{
     
     public IncomeTypeRepository(){}
     
+    @Override
     public void saveIncomeType(IncomeType it){
         boolean iguais=false;
         
@@ -44,6 +45,4 @@ public class IncomeTypeRepository implements IIncomeTypeRepository{
     public List<IncomeType> getAllIncomeTypes() {
         return Collections.unmodifiableList(listIncomeType); // Retorna uma cópia da lista original
     }
-
-
 }

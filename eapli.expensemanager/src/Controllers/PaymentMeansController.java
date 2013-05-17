@@ -20,7 +20,9 @@ import java.util.List;
  *
  * @author Ruben Ferreira
  */
+
 public class PaymentMeansController extends BaseController {
+
     
     PaymentMeansRepository pmr = new PaymentMeansRepository();
 

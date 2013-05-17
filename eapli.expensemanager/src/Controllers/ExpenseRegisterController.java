@@ -17,7 +17,7 @@ import java.util.List;
  *
  * @author mcn
  */
-public class ExpenseRegisterController {
+public class ExpenseRegisterController extends BaseController{
 
       public ExpenseRegisterController() {
       }

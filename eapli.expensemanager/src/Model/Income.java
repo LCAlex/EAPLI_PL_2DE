@@ -40,8 +40,22 @@ public class Income {
     }
 
     public Income(String description, int year, int month, int day, BigDecimal amount, IncomeType incType) {
+            if (description == null || dateOccurred == null || amount == null || incType == null) {
+                  throw new IllegalArgumentException();
+            }
+            // cannot record a negative income or a zero EUR income
+            if (amount.signum() == -1 || amount.signum() == 0) {
+                  throw new IllegalArgumentException();
+            }
+            this.description = description;
+            this.dateOccurred = dateOccurred;
+            this.amount = amount;
+            this.incType = incType;
+      }
+    
+   /* public Income(String description, int year, int month, int day, BigDecimal amount, IncomeType incType){
         this(description, DateTime.newDate(year, month, day), amount, incType);
-    }
+    }*/
 
     public Income(Income inc) {
         if (inc == null) {
