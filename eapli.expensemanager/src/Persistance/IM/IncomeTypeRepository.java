@@ -20,6 +20,7 @@ public class IncomeTypeRepository implements IIncomeTypeRepository{
     
     public IncomeTypeRepository(){}
     
+    @Override
     public void saveIncomeType(IncomeType it){
         boolean iguais=false;
         
@@ -41,12 +42,7 @@ public class IncomeTypeRepository implements IIncomeTypeRepository{
         }
     }
     
-    public List<IncomeType> getAllExpenseTypes() {
-        return Collections.unmodifiableList(listIncomeType); // Retorna uma cópia da lista original
-    }
-
-    @Override
     public List<IncomeType> getAllIncomeTypes() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return Collections.unmodifiableList(listIncomeType); // Retorna uma cópia da lista original
     }
 }
