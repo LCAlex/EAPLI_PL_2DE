@@ -10,10 +10,13 @@ import Model.CreditCard;
 import Model.DebitCard;
 import Model.Expense;
 import Model.ExpenseType;
+import Model.IncomeType;
 import Persistance.IM.ExpenseRepository;
 import Persistance.IM.ExpenseTypeRepository;
 import Persistance.IExpenseRepository;
 import Persistance.IExpenseTypeRepository;
+import Persistance.IIncomeTypeRepository;
+import Persistance.IM.IncomeTypeRepository;
 import Persistance.IPaymentMeansRepository;
 import Persistance.IM.PaymentMeansRepository;
 import java.math.BigDecimal;
@@ -28,6 +31,7 @@ public class BootstrapperClass {
         inicializeExpenseTypes();
         inicializePaymentMeans();
         inicializeExpenses();
+        inicializeIncomeTypes();
     }
     
     private static void inicializeExpenseTypes(){
@@ -57,6 +61,15 @@ public class BootstrapperClass {
         repo.saveExpense(new Expense("Almoço", 2013, 3, 5, new BigDecimal(12.4),repoType.getAllExpenseTypes().get(1), repoPay.getListPayMeans().get(3)));
         repo.saveExpense(new Expense("Sapatilhas", 2013, 3, 4, new BigDecimal(123.4),repoType.getAllExpenseTypes().get(0), repoPay.getListPayMeans().get(1)));
         repo.saveExpense(new Expense("Cinema", 2013, 3, 4, new BigDecimal(5),repoType.getAllExpenseTypes().get(3), repoPay.getListPayMeans().get(2)));
+    }
+    
+    private static void inicializeIncomeTypes(){
+        IIncomeTypeRepository repoType = new IncomeTypeRepository();
+        
+        repoType.saveIncomeType(new IncomeType("Salário"));
+        repoType.saveIncomeType(new IncomeType("Mesada"));
+        repoType.saveIncomeType(new IncomeType("Prestação de Serviços"));
+        repoType.saveIncomeType(new IncomeType("Segurança Social"));
     }
     
 }
