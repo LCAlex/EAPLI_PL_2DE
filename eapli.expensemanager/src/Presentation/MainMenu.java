@@ -13,6 +13,7 @@ public class MainMenu {
 
       public MainMenu() {
       }
+      
        public void mainLoop() {
             int op;
             do {
@@ -79,4 +80,3 @@ public class MainMenu {
             return option;
       }
 }
-

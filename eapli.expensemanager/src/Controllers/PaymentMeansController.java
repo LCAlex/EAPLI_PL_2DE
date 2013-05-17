@@ -22,7 +22,6 @@ import java.util.List;
  */
 
 public class PaymentMeansController extends BaseController {
-
     
     PaymentMeansRepository pmr = new PaymentMeansRepository();
 
