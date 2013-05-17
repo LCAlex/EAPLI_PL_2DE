@@ -12,9 +12,7 @@ import java.util.List;
  * @author Joao
  */
 public class PaymentTypes {
-
     private ArrayList<String> list=new ArrayList<String>();
-    
     public void PaymentTypes(){
         list.add("Cash");
         list.add("Check");
@@ -27,7 +25,7 @@ public class PaymentTypes {
      * @return the list
      */
     public void getList() {
-           for(int i=0;i<list.size();i++){
+        for(int i=0;i<list.size();i++){
                 System.out.println(i+". "+list.get(i));
             }
     }
