@@ -4,18 +4,22 @@
  */
 package Model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Tecnica21
  */
 
-//@Entity
-//@Table(name="EXPENSE_TYPE_INFO")
+@Entity
 public class ExpenseType {
 
-    //@Id
-    //@Column(name="ID")
-    //private int expenseTypeId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     private String name;
 
