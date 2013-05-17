@@ -5,23 +5,40 @@
 package Model;
 
 import eapli.util.DateTime;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
 
 
 /**
  *
  * @author mcn
  */
-public class Expense {
+@Entity
+public class Expense implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
       private String description;
       private BigDecimal amount;
+    @Temporal(javax.persistence.TemporalType.DATE)
       private Date dateOccurred;
+    @ManyToOne
       private ExpenseType expType;
-      private PaymentMean pm;
+    @OneToOne
+     private PaymentMean pm;
+    
+
       
 
       protected Expense() {
