@@ -6,11 +6,8 @@ package Presentation;
 
 
 import Controllers.BaseController;
-import Controllers.ShowTotalExpensesController;
-import eapli.util.Console;
-import eapli.util.DateTime;
+import Controllers.ShowBalanceController;
 import java.math.BigDecimal;
-import java.util.Calendar;
 
 /**
  *
@@ -35,13 +32,12 @@ public class ShowBalanceUI extends BaseUI{
     
     @Override
     public void run() {
-            int month,year;
-            BigDecimal total;
-            ShowTotalExpensesController controller = new ShowTotalExpensesController();
-            month = Console.readInteger("Insert month");
-            year = Console.readInteger("Insert year");
-            total=controller.showExpenses(month,year);
-            System.out.println("No mes "+month+" teve um gasto de "+total+"€ no ano"+year);
+           
+            BigDecimal balance;
+            ShowBalanceController controller = new ShowBalanceController();
+            
+            //balance=controller.ShowBalanceController();
+           // System.out.println("Your Balance is: "+balance+"€");
      }
 
 }
