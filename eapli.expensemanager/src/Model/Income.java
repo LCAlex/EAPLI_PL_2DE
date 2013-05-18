@@ -27,7 +27,7 @@ public class Income {
             if (description == null || dateOccurred == null || amount == null || incType == null) {
                   throw new IllegalArgumentException();
             }
-            // cannot record a negative expense or a zero EUR expense
+            // cannot record a negative income or a zero EUR income
             if (amount.signum() == -1 || amount.signum() == 0) {
                   throw new IllegalArgumentException();
             }

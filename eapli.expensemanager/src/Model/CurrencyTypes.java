@@ -5,6 +5,7 @@
 package Model;
 
 import eapli.util.Console;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,18 +13,18 @@ import java.util.List;
  * @author Joao
  */
 public class CurrencyTypes {
-    private List<String> list;
+    private ArrayList<String> list=new ArrayList<String>();
     public void CurrencyTypes(){
-        getList().add("EUR");
-        getList().add("USD");
-        getList().add("GBP");
-        getList().add("AUD");
+        list.add("EUR");
+        list.add("USD");
+        list.add("GBP");
+        list.add("AUD");
     }
 
     /**
      * @return the list
      */
-    public List<String> getList() {
+    public ArrayList<String> getList() {
         return list;
     }
     public String getCurrencyList(){
@@ -31,7 +32,7 @@ public class CurrencyTypes {
         System.out.println("===================\n");
         for(int i=0;i<list.size();i++){
                 System.out.println(i+". "+list.get(i));
-            }
+        }
         System.out.println("0. Exit\n\n");
         int option = Console.readInteger("Please choose an option");
         return list.get(option-1);
