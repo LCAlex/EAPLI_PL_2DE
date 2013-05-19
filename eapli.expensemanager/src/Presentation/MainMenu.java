@@ -24,11 +24,11 @@ public class MainMenu {
                               break;
                         case 1:
                               ExpenseRegisterUI ui = new ExpenseRegisterUI();
-                              ui.run();
+                              ui.show();
                               break;
                       case 2:
                               ShowExpensesUI showExpensesUI = new ShowExpensesUI();
-                              showExpensesUI.loop();
+                              showExpensesUI.show();
                               break;
       
                       case 3:
@@ -38,24 +38,24 @@ public class MainMenu {
 
                       case 4:
                           ShowTotalExpensesUI showTotalExpensesUI = new ShowTotalExpensesUI();
-                          showTotalExpensesUI.run();
+                          showTotalExpensesUI.show();
                           break;
                           
                       case 5:
                           ExpenseTypeRegisterUI expenseTypeRegisterUI = new ExpenseTypeRegisterUI();
-                          expenseTypeRegisterUI.run();
+                          expenseTypeRegisterUI.show();
                           break;
                       case 6:
                           ShowTotalExpensesByTypeUI expensesPerMonth = new ShowTotalExpensesByTypeUI();
-                          expensesPerMonth.run();
+                          expensesPerMonth.show();
                           break;
                       case 7:
                           IncomeTypeRegisterUI incomeTypeRegisterUI = new IncomeTypeRegisterUI();
-                          incomeTypeRegisterUI.run();
+                          incomeTypeRegisterUI.show();
                           break;                         
                       case 8:
                           IncomeRegisterUI incomeUI = new IncomeRegisterUI();
-                          incomeUI.run();
+                          incomeUI.show();
                           break;
 
                   }

@@ -12,6 +12,7 @@ import java.util.List;
  * @author Joao
  */
 public class PaymentTypes {
+    
     private ArrayList<String> list=new ArrayList<String>();
     public void PaymentTypes(){
         list.add("Cash");

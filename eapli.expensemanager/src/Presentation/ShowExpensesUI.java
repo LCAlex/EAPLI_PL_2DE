@@ -4,6 +4,7 @@
  */
 package Presentation;
 
+import Controllers.BaseController;
 import Controllers.ShowExpensesController;
 import Model.Expense;
 import eapli.util.Console;
@@ -13,13 +14,19 @@ import java.util.List;
  *
  * @author 
  */
-public class ShowExpensesUI {
+public class ShowExpensesUI extends BaseUI {
+    
+     ShowExpensesController controller = new ShowExpensesController();
       public ShowExpensesUI() {
       }
+      
+      @Override
+    public void header() {
+    }
 
-      public void loop() {
+      public void run() {
             int op;
-            ShowExpensesController controller = new ShowExpensesController();
+           
             do {
                   op = menu();              
                   switch (op) {
@@ -59,4 +66,11 @@ public class ShowExpensesUI {
                   System.out.println("Expense "+i+"\n" + exp);
             }
       }
+
+    @Override
+    protected BaseController controller() {
+return controller;
+    }
+
+    
 }
