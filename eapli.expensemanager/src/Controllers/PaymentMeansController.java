@@ -49,12 +49,14 @@ public class PaymentMeansController extends BaseController {
         pmr.registerPaymentMean(dc);
     }
     
-    public void getPaymentMeansList(){
+    public void showPaymentMeansList(){
         pmr.showListPayMeans();
     }
     
     public List<PaymentMean> getListPaymentMeans(){
         return pmr.getListPayMeans();
     }
+    
+   
     
 }

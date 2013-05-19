@@ -38,8 +38,24 @@ public class IncomeRepository implements IIncomeRepository {
     public List<Income> getAllIncomes() {
         return Collections.unmodifiableList(listIncome); // Retorna uma cópia da lista original
     }
+     
+    @Override
+    public void showIncomeList() {
+         if(listIncome.isEmpty())
+       {
+           System.out.println("LIST IS EMPTY!\n");
+       }
+       else
+       {
+           for(int i=0; i < listIncome.size();i++)
+           { 
+               System.out.println("- "+listIncome.get(i));                 
+           }
+           System.out.println("\n");
+       }
+    }
 
-    public Income getLastIncome() {
+   /* public Income getLastIncome() {
         Income inc = null;
         Income copy = null;
         
@@ -55,7 +71,7 @@ public class IncomeRepository implements IIncomeRepository {
         
         return copy;
     }
-
+*/
     
    /*  @Override
     public List<Income> getAllIncomes(int month, int year) {
@@ -88,6 +104,5 @@ public class IncomeRepository implements IIncomeRepository {
     }*/
 
    
-
-   
+ 
 }

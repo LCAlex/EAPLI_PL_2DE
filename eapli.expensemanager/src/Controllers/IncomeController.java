@@ -35,6 +35,12 @@ public class IncomeController extends BaseController {
          return list;
      }
      
+     public void showIncomeList()
+     {
+         IncomeRepository rep =new IncomeRepository();
+         rep.showIncomeList(); 
+     }
+     
      
      
   

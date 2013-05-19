@@ -14,11 +14,12 @@ import java.util.List;
  */
 public interface IIncomeRepository {
     
-    void saveIncome(Income exp);
+    void saveIncome(Income inc);
     List<Income> getAllIncomes();
-    //Income getLastIncome();
-   // List<Income> getAllIncomes(int month, int year);
-   // List<Income> getAllIncomesWeek(int week, int year);
-   // List<Income> getAllIncomesByType(int month, int year, IncomeType type);
+    void showIncomeList();
+   //Income getLastIncome();
+   //List<Income> getAllIncomes(int month, int year);
+   //List<Income> getAllIncomesWeek(int week, int year);
+   //List<Income> getAllIncomesByType(int month, int year, IncomeType type);
     
 }

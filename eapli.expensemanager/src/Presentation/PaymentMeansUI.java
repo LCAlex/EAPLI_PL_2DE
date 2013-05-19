@@ -34,7 +34,6 @@ public class PaymentMeansUI extends BaseUI {
     @Override
     public void header() {
         System.out.println("* * *  REGISTER A PAYMENT MEAN  * * *");
-        System.out.println("* * *  LIST OF PAYMENT MEANS  * * *\n");
     }
 
     @Override
@@ -103,7 +102,8 @@ public class PaymentMeansUI extends BaseUI {
 
     private int menu() {
 
-        pmc.getPaymentMeansList(); //lista todos os meios guardados no repositório
+        System.out.println("* * *  LIST OF PAYMENT MEANS  * * *\n");
+        pmc.showPaymentMeansList(); //lista todos os meios guardados no repositório
 
         System.out.println("* * *  WHAT TYPE OF MEAN DO YOU WISH TO ADD?  * * *");
         System.out.println("===================\n"); //para efeito de teste está implementado assim

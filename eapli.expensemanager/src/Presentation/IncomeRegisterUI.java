@@ -5,7 +5,7 @@
 package Presentation;
 
 import Controllers.BaseController;
-import Controllers.IncomeRegisterController;
+import Controllers.IncomeController;
 import Model.IncomeType;
 import Model.PaymentMean;
 import eapli.util.Console;
@@ -20,7 +20,7 @@ import java.util.List;
 public class IncomeRegisterUI extends BaseUI{
     
     
-      IncomeRegisterController controller = new IncomeRegisterController();
+      IncomeController controller = new IncomeController();
 
       public IncomeRegisterUI() {
        
