@@ -103,6 +103,16 @@ public class IncomeRepository implements IIncomeRepository {
         return temp;
     }*/
 
+    @Override
+    public float getSumofIncomes() {
+        float sum=0;
+         for(int i=0; i < listIncome.size();i++)
+           { 
+               sum+= listIncome.get(i).getAmount().ROUND_CEILING;
+           }
+        return sum;
+    }
+
    
  
 }

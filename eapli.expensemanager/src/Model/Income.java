@@ -5,21 +5,34 @@
 package Model;
 
 import eapli.util.DateTime;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author Tecnica21
  */
-public class Income {
+@Entity
+public class Income implements Serializable{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String description;
     private BigDecimal amount;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateOccurred;
+    @ManyToOne
     private IncomeType incType;
 
     protected Income() {

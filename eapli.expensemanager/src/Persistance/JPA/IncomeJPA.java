@@ -37,6 +37,13 @@ public class IncomeJPA extends JpaGeneric<Income, Long> implements IIncomeReposi
         //TODO testes unitarios
     }
 
+    @Override
+    public float getSumofIncomes() {
+        float sum=0;
+        
+        return sum;
+    }
+
   
     
 }

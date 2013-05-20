@@ -17,6 +17,7 @@ public interface IIncomeRepository {
     void saveIncome(Income inc);
     List<Income> getAllIncomes();
     void showIncomeList();
+    float getSumofIncomes();
    //Income getLastIncome();
    //List<Income> getAllIncomes(int month, int year);
    //List<Income> getAllIncomesWeek(int week, int year);
