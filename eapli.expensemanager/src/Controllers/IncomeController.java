@@ -6,10 +6,8 @@ package Controllers;
 
 import Model.Income;
 import Model.IncomeType;
-import Model.PaymentMean;
 import Persistance.IM.IncomeRepository;
 import Persistance.IM.IncomeTypeRepository;
-import Persistance.IM.PaymentMeansRepository;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -39,6 +37,14 @@ public class IncomeController extends BaseController {
      {
          IncomeRepository rep =new IncomeRepository();
          rep.showIncomeList(); 
+     }
+     
+      public float getSumofIncomes()
+     {
+         float sum=0;
+         IncomeRepository rep =new IncomeRepository();
+         sum = rep.getSumofIncomes();
+         return sum;
      }
      
      

@@ -4,11 +4,8 @@
  */
 package Persistance.IM;
 
-import Model.Expense;
-import Model.ExpenseType;
+
 import Model.Income;
-import Model.IncomeType;
-import Persistance.IExpenseRepository;
 import Persistance.IIncomeRepository;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -53,6 +50,16 @@ public class IncomeRepository implements IIncomeRepository {
            }
            System.out.println("\n");
        }
+    }
+    
+     @Override
+    public float getSumofIncomes() {
+        float sum=0;
+         for(int i=0; i < listIncome.size();i++)
+           { 
+               sum+= listIncome.get(i).getAmount().ROUND_CEILING;
+           }
+        return sum;
     }
 
    /* public Income getLastIncome() {
@@ -103,16 +110,5 @@ public class IncomeRepository implements IIncomeRepository {
         return temp;
     }*/
 
-    @Override
-    public float getSumofIncomes() {
-        float sum=0;
-         for(int i=0; i < listIncome.size();i++)
-           { 
-               sum+= listIncome.get(i).getAmount().ROUND_CEILING;
-           }
-        return sum;
-    }
 
-   
- 
 }
