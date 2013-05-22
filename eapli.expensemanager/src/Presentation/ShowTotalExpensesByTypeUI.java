@@ -9,7 +9,6 @@ import Controllers.ShowTotalExpensesController;
 import ModelView.ExpensesperMonthDTO;
 import eapli.util.Console;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,7 +40,7 @@ public class ShowTotalExpensesByTypeUI extends BaseUI{
         month = Console.readInteger("Insert month");
         year = Console.readInteger("Insert year");
         List<ExpensesperMonthDTO> listExpensesPerMonth = controller.showExpensesByType(month,year);
-        if(listExpensesPerMonth != null){
+        if(!listExpensesPerMonth.isEmpty()){
             System.out.println(listExpensesPerMonth);
         }else
             System.out.println("You have no expenses!");

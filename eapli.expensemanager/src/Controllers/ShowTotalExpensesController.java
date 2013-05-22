@@ -72,8 +72,6 @@ public class ShowTotalExpensesController {
                 resultList.add(myDTO);
             }
         }
-        else
-            return null;
         
         return resultList;
     }
@@ -81,10 +79,9 @@ public class ShowTotalExpensesController {
         public List<ExpenseTotal> showExpenseByTypes(int month, int year){
         IExpenseTypeRepository typeRep = new ExpenseTypeRepository();
         IExpenseRepository rep = new ExpenseRepository();
-        ExpenseRecord rec = new ExpenseRecord();
-        List<ExpenseType> types = typeRep.getAllExpenseTypes();
+        ExpenseRecord rec;
         List<ExpenseTotal> temp = new ArrayList();
-        for(ExpenseType expType:types){
+        for(ExpenseType expType:typeRep.getAllExpenseTypes()){
             rec = new ExpenseRecord(rep.getAllExpensesByType(month, year, expType));
             ExpenseTotal expT = new ExpenseTotal(expType.getName(), rec.getTotal());
             temp.add(expT);
