@@ -6,16 +6,17 @@ package Controllers;
 
 import Model.Expense;
 import Model.ExpenseRecord;
-import Persistance.IM.ExpenseRepository;
-import java.math.BigDecimal;
-import java.util.List;
-import ModelView.ExpensesperMonthDTO;
-import Persistance.IM.ExpenseTypeRepository;
 import Model.ExpenseType;
 import ModelView.ExpenseTotal;
+import ModelView.ExpensesperMonthDTO;
 import Persistance.IExpenseRepository;
 import Persistance.IExpenseTypeRepository;
+import Persistance.IM.ExpenseRepository;
+import Persistance.IM.ExpenseTypeRepository;
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
 /**
  *
  * @author lmsc
@@ -76,7 +77,13 @@ public class ShowTotalExpensesController {
         return resultList;
     }
     
-        public List<ExpenseTotal> showExpenseByTypes(int month, int year){
+        /**
+     * Retorna uma lista de despesas, de determinado mes e ano
+     * @param month
+     * @param year
+     * @return
+     */
+    public List<ExpenseTotal> showExpenseByTypes(int month, int year){
         IExpenseTypeRepository typeRep = new ExpenseTypeRepository();
         IExpenseRepository rep = new ExpenseRepository();
         ExpenseRecord rec;
@@ -89,5 +96,6 @@ public class ShowTotalExpensesController {
         return temp;
         
     }
+    private static final Logger LOG = Logger.getLogger(ShowTotalExpensesController.class.getName());
     
 }
