@@ -29,6 +29,9 @@ public class ExpensesperMonthDTO {
         this.ammount = ammount;
         this.expenses = expenses;
     }
+
+    protected ExpensesperMonthDTO() {
+    }
     
     public String getExpenseType()
     {
