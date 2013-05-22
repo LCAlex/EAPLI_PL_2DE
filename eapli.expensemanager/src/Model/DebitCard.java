@@ -4,12 +4,20 @@
  */
 package Model;
 
+import java.io.Serializable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author Ruben Ferreira
  */
-public class DebitCard extends PaymentMean {
+public class DebitCard extends PaymentMean implements Serializable {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     long numero;
     String instBancaria;
     String tipo; 

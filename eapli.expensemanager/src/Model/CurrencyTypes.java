@@ -14,6 +14,7 @@ import java.util.List;
  */
 public class CurrencyTypes {
     private ArrayList<String> list=new ArrayList<String>();
+    
     public void CurrencyTypes(){
         list.add("EUR");
         list.add("USD");
@@ -27,6 +28,7 @@ public class CurrencyTypes {
     public ArrayList<String> getList() {
         return list;
     }
+    
     public String getCurrencyList(){
         System.out.println("* * *  WHAT TYPE OF CURRENCY?  * * *");
         System.out.println("===================\n");

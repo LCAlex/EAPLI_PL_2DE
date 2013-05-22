@@ -4,31 +4,47 @@
  */
 package Model;
 
+import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author Ruben Ferreira
  */
-public class Cash extends PaymentMean{
+@Entity
+public class Cash extends PaymentMean implements Serializable{
     
-    private static List<String> listCurrency;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String currency;
+    
+    
+   // private static List<String> listCurrency;
+
+    
 
     /**
      * @return the listCurrency
      */
-    public static List<String> getListCurrency() {
-        return listCurrency;
-    }
+    //public static List<String> getListCurrency() {
+      //  return listCurrency;
+   // }
 
     /**
      * @param aListCurrency the listCurrency to set
      */
-    public static void setListCurrency(List<String> aListCurrency) {
-        listCurrency = aListCurrency;
-    }
+    //public static void setListCurrency(List<String> aListCurrency) {
+      //  listCurrency = aListCurrency;
+    //}
     
-    private String currency;
+    
+public Cash() {
+    }
     
    public Cash(int i, String c)
    {

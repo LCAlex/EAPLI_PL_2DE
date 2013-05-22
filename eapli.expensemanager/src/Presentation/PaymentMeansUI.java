@@ -47,19 +47,24 @@ public class PaymentMeansUI extends BaseUI {
                     break;
                 case 1:
                     System.out.println("You chose to add Cash:");
-                    String currency = ct.getCurrencyList();
+                    boolean flag = false;
                     PaymentMean aux;
                     listPayMeansAUX = pmc.getListPaymentMeans();
                     for (int i = 0; i < listPayMeansAUX.size(); i++) {
                         aux = listPayMeansAUX.get(i);
                         if (aux instanceof Cash) {
                             System.out.println("Cash already exists!");
+                            flag = true;
                             break;
                         }
                     }
+                    if (flag == false)
+                    {
+                    String currency = ct.getCurrencyList();        
                     pmc.registerCash(ID, currency);
                     System.out.println("Payment mean added to the repository.");
                     ID++;
+                    }
                     break;
                 case 2:
                     System.out.println("You chose to add a Check:");
