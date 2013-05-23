@@ -5,7 +5,7 @@
 package eapli;
 
 import Model.Cash;
-import Model.Check;
+import Model.Cheque;
 import Model.CreditCard;
 import Model.DebitCard;
 import Model.Expense;

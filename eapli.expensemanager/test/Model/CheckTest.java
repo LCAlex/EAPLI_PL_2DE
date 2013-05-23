@@ -37,12 +37,12 @@ public class CheckTest {
     }
 
     /**
-     * Test of toString method, of class Check.
+     * Test of toString method, of class Cheque.
      */
     @Test
     public void testToString() {
         System.out.println("toString");
-        Check instance = new Check(200,"Caixa");
+        Cheque instance = new Cheque(200,"Caixa");
         String expResult ="Numero: 200" + "\nInst. Bancaria: Caixa";
         String result = instance.toString();
         assertEquals(expResult, result);

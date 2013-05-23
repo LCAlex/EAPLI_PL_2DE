@@ -16,16 +16,16 @@ import javax.persistence.Id;
  * @author Ruben Ferreira
  */
 @Entity
-public class Check extends PaymentMean implements Serializable{
+public class Cheque extends PaymentMean implements Serializable{
     
 
     int numero;
     String instBancaria;
     
-    public Check(){       
+    public Cheque(){       
     }
     
-    public Check(int n, String ib){
+    public Cheque(int n, String ib){
         super();
         numero = n;
         instBancaria = ib;
