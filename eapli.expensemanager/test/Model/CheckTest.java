@@ -43,7 +43,7 @@ public class CheckTest {
     public void testToString() {
         System.out.println("toString");
         Check instance = new Check(200,"Caixa");
-        String expResult = "\nNumero: 200" + "\nInst. Bancaria: Caixa";
+        String expResult ="Numero: 200" + "\nInst. Bancaria: Caixa";
         String result = instance.toString();
         assertEquals(expResult, result);
     }
