@@ -1,4 +1,3 @@
-
 package Controllers;
 
 import Model.AccountServices;
@@ -11,14 +10,13 @@ import java.util.List;
  *
  * @Luis
  */
-
-
 public class ShowBalanceController {
-    
-//     public ShowBalanceController() {
-//         AccountServices.getBalance();
-//     }
-       
-    
 
+    public ShowBalanceController() {
+    }
+
+    public BigDecimal ShowBalance() {
+        AccountServices ac = new AccountServices();
+        return ac.getBalance();
+    }
 }

@@ -6,6 +6,7 @@ package Persistance.JPA;
 
 import Model.Expense;
 import Model.Income;
+import Model.IncomeType;
 import Persistance.IExpenseRepository;
 import Persistance.IIncomeRepository;
 import java.util.List;
@@ -40,6 +41,26 @@ public class IncomeJPA extends JpaGeneric<Income, Long> implements IIncomeReposi
         float sum=0;
         
         return sum;
+    }
+
+    @Override
+    public Income getLastIncome() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public List<Income> getAllIncomes(int month, int year) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public List<Income> getAllIncomesWeek(int week, int year) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public List<Income> getAllIncomesByType(int month, int year, IncomeType type) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
   

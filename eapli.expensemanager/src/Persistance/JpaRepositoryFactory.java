@@ -7,25 +7,35 @@ package Persistance;
 import Persistance.IExpenseRepository;
 import Persistance.IExpenseTypeRepository;
 import Persistance.IPaymentMeansRepository;
+import javax.persistence.Persistence;
 
 /**
  *
  * @author lmsc
  */
-public class JpaRepositoryFactory {
-   /* @Override
+public class JpaRepositoryFactory implements IRepositoryFactory{
+   @Override
     public IExpenseRepository getExpenseRepository(){
-        return new Persistence.JPA.ExpenseJPA;
+        return new Persistance.JPA.ExpenseJpa();
     }
     
     @Override
     public IExpenseTypeRepository getExpenseTypeRepository(){
-        return new Persistence.JPA.ExpenseTypeRepositoryJPA;
+        return new Persistance.JPA.ExpenseTypeJpa();
     }
      
     @Override
-    public IPaymentMeansRepository getPaymentMeansRepository(){
-        return new Persistence.JPA.PaymentMeansRepositoryJPA;
+    public IPaymentMeansRepository getPaymentMeanRepository(){
+        return new Persistance.JPA.PaymentMeansJPA();
     }
-    * */
+    
+    @Override
+    public IIncomeTypeRepository getIncomeTypeRepository(){
+        return new Persistance.JPA.IncomeTypeJpa();
+    }
+    
+    @Override
+    public IIncomeRepository getIncomeRepository(){
+        return new Persistance.JPA.IncomeJPA();
+    }
 }
