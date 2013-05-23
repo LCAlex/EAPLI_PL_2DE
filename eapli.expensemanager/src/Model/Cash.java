@@ -53,8 +53,9 @@ public Cash() {
    }
     
     @Override
-      public String toString(){   
-         return super.toString();
+      public String toString(){
+         String s = "\nCurrency: "+currency;
+         return super.toString()+s;
       }
 
     /**
