@@ -5,6 +5,7 @@
 package Persistance.IM;
 
 import Model.Income;
+import Model.IncomeType;
 import Persistance.IIncomeRepository;
 import java.math.BigDecimal;
 import java.util.ArrayList;
