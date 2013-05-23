@@ -5,7 +5,7 @@
 package Persistance;
 
 import Model.Income;
-import Model.IncomeType;
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -16,8 +16,7 @@ public interface IIncomeRepository {
     
     void saveIncome(Income inc);
     List<Income> getAllIncomes();
-    void showIncomeList();
-    float getSumofIncomes();
+    //void showIncomeList();   
    //Income getLastIncome();
    //List<Income> getAllIncomes(int month, int year);
    //List<Income> getAllIncomesWeek(int week, int year);

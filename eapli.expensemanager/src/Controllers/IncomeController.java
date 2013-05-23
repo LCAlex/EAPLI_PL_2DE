@@ -9,6 +9,7 @@ import Model.IncomeType;
 import Persistance.IM.IncomeRepository;
 import Persistance.IM.IncomeTypeRepository;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -33,19 +34,14 @@ public class IncomeController extends BaseController {
          return list;
      }
      
-     public void showIncomeList()
+     public List<Income>  getIncomeList()
      {
+         List<Income> listIncome = new ArrayList<>();
          IncomeRepository rep =new IncomeRepository();
-         rep.showIncomeList(); 
+         listIncome = rep.getAllIncomes(); 
+         return listIncome;
      }
-     
-      public float getSumofIncomes()
-     {
-         float sum=0;
-         IncomeRepository rep =new IncomeRepository();
-         sum = rep.getSumofIncomes();
-         return sum;
-     }
+  
      
      
      

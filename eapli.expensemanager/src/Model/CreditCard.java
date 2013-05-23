@@ -28,8 +28,8 @@ public class CreditCard extends PaymentMean implements Serializable {
     
     public CreditCard(){}
     
-    public CreditCard(int i,Date dv, int n, String ib, String t){
-        super(i);
+    public CreditCard(Date dv, int n, String ib, String t){
+        super();
         dataVal = dv;
         numero = n;
         instBancaria = ib;
@@ -38,7 +38,7 @@ public class CreditCard extends PaymentMean implements Serializable {
     
     @Override
       public String toString(){   
-          String s = "\nNumero: "+numero+"\nInst. Bancaria: "+instBancaria+"\nTipo: "+tipo+"\nData de Validade: "+dataVal;              
+          String s = "Numero: "+numero+"\nInst. Bancaria: "+instBancaria+"\nTipo: "+tipo+"\nData de Validade: "+dataVal;              
           return super.toString()+s;
       
       }

@@ -11,7 +11,6 @@ import Model.CurrencyTypes;
 import Model.PaymentMean;
 import Model.PaymentTypes;
 import eapli.util.Console;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -27,6 +26,7 @@ public class PaymentMeansUI extends BaseUI {
     static int ID = 0;
     int id;
     private static List<PaymentMean> listPayMeansAUX = new ArrayList<>();
+    
 
     public PaymentMeansUI() {
     }
@@ -41,6 +41,7 @@ public class PaymentMeansUI extends BaseUI {
 
         int op;
         do {
+            listPayMeansAUX = pmc.getListPaymentMeans();
             op = menu();
             switch (op) {
                 case 0:
@@ -49,7 +50,7 @@ public class PaymentMeansUI extends BaseUI {
                     System.out.println("You chose to add Cash:");
                     boolean flag = false;
                     PaymentMean aux;
-                    listPayMeansAUX = pmc.getListPaymentMeans();
+                    
                     for (int i = 0; i < listPayMeansAUX.size(); i++) {
                         aux = listPayMeansAUX.get(i);
                         if (aux instanceof Cash) {
@@ -61,7 +62,7 @@ public class PaymentMeansUI extends BaseUI {
                     if (flag == false)
                     {
                     String currency = ct.getCurrencyList();        
-                    pmc.registerCash(ID, currency);
+                    pmc.registerCash(currency);
                     System.out.println("Payment mean added to the repository.");
                     ID++;
                     }
@@ -72,7 +73,7 @@ public class PaymentMeansUI extends BaseUI {
                     String instBanc = Console.readLine("Bank:");
                     int num = Console.readInteger("Check Number:");
 
-                    pmc.registerCheck(ID, num, instBanc);
+                    pmc.registerCheck(num, instBanc);
                     System.out.println("Payment mean added to the repository.");
                     ID++;
                     break;
@@ -83,7 +84,7 @@ public class PaymentMeansUI extends BaseUI {
                     String tipo = Console.readLine("Type:");
                     int num1 = Console.readInteger("Card Number:");
 
-                    pmc.registerDCard(ID, num1, instB, tipo);
+                    pmc.registerDCard(num1, instB, tipo);
                     System.out.println("Payment mean added to the repository.");
                     ID++;
                     break;
@@ -95,7 +96,7 @@ public class PaymentMeansUI extends BaseUI {
                     int num2 = Console.readInteger("Card Number:");
                     Date d1 = Console.readDate("Expiration Date: ");
 
-                    pmc.registerCCard(ID, d1, num2, instBa, tipo1);
+                    pmc.registerCCard(d1, num2, instBa, tipo1);
                     System.out.println("Payment mean added to the repository.");
                     ID++;
                     break;
@@ -108,7 +109,22 @@ public class PaymentMeansUI extends BaseUI {
     private int menu() {
 
         System.out.println("* * *  LIST OF PAYMENT MEANS  * * *\n");
-        pmc.showPaymentMeansList(); //lista todos os meios guardados no repositório
+        //lista todos os meios guardados no repositório
+        //listPayMeansAUX = pmc.getListPaymentMeans();
+        if(listPayMeansAUX.isEmpty())    
+       {
+           System.out.println("LIST IS EMPTY!\n");
+       }
+       else
+       {
+           for(int i=0; i < listPayMeansAUX.size();i++)
+           { 
+               System.out.println("- "+atribuiNome(listPayMeansAUX.get(i)));  
+               System.out.println(listPayMeansAUX.get(i));                 
+           }
+           System.out.println("\n");
+       }
+       
 
         System.out.println("* * *  WHAT TYPE OF MEAN DO YOU WISH TO ADD?  * * *");
         System.out.println("===================\n"); 
@@ -130,4 +146,19 @@ public class PaymentMeansUI extends BaseUI {
     protected BaseController controller() {
         return pmc;
     }
+    
+     private String atribuiNome(PaymentMean pm){
+         String nome = null;
+         
+         if("Model.Cash".equals(pm.getClass().getName()))
+             nome = "Cash";
+         if("Model.Check".equals(pm.getClass().getName()))
+             nome = "Check";
+         if("Model.CreditCard".equals(pm.getClass().getName()))
+             nome = "Credit Card";
+         if("Model.DebitCard".equals(pm.getClass().getName()))
+             nome = "Debit Card";
+       
+      return nome;
+   }
 }

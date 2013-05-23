@@ -53,6 +53,7 @@ public class Income implements Serializable{
     }
 
     public Income(String description, int year, int month, int day, BigDecimal amount, IncomeType incType) {
+        
             if (description == null || dateOccurred == null || amount == null || incType == null) {
                   throw new IllegalArgumentException();
             }

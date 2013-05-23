@@ -27,12 +27,12 @@ public class PaymentMeansJPA extends JpaGeneric<PaymentMean, Long> implements IP
         save(pm);
     }
 
-    @Override
+    /*@Override
     public void showListPayMeans() {
         EntityManager em = getEntityManager();
         Query q = em.createQuery("SELECT * FROM Cash, Check, CreditCard, Debit Card");
         System.out.println(q.getResultList());
-    }
+    }*/
 
     @Override
     public List<PaymentMean> getListPayMeans() {

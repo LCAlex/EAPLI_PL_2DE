@@ -29,7 +29,7 @@ public class PaymentMeansRepository implements IPaymentMeansRepository{
         listPayMeans.add(pm);      
     }
    
-     @Override
+  /*   @Override
    public void showListPayMeans(){
        
        if(listPayMeans.isEmpty())
@@ -46,27 +46,14 @@ public class PaymentMeansRepository implements IPaymentMeansRepository{
            System.out.println("\n");
        }
        
-   }
+   }*/
    
      @Override
    public List<PaymentMean> getListPayMeans(){
        return listPayMeans;
    }
    
-   private String atribuiNome(PaymentMean pm){
-         String nome = null;
-         
-         if("Model.Cash".equals(pm.getClass().getName()))
-             nome = "Cash";
-         if("Model.Check".equals(pm.getClass().getName()))
-             nome = "Check";
-         if("Model.CreditCard".equals(pm.getClass().getName()))
-             nome = "Credit Card";
-         if("Model.DebitCard".equals(pm.getClass().getName()))
-             nome = "Debit Card";
-       
-      return nome;
-   }
+  
    
      
 }

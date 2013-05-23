@@ -6,6 +6,9 @@ package Presentation;
 
 import Controllers.BaseController;
 import Controllers.IncomeController;
+import Model.Income;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,6 +17,7 @@ import Controllers.IncomeController;
 public class ShowIncomesUI extends BaseUI{
 
     IncomeController ic = new IncomeController();
+    List<Income> listIncome = new ArrayList<>();
     
     public ShowIncomesUI() {
     }
@@ -25,7 +29,21 @@ public class ShowIncomesUI extends BaseUI{
 
     @Override
     public void run() {
-         ic.showIncomeList();
+        
+         listIncome = ic.getIncomeList();
+         
+         if(listIncome.isEmpty())
+       {
+           System.out.println("LIST IS EMPTY!\n");
+       }
+       else
+       {
+           for(int i=0; i < listIncome.size();i++)
+           { 
+               System.out.println("- "+listIncome.get(i));                 
+           }
+           System.out.println("\n");
+       }
     }
     
      @Override

@@ -27,15 +27,15 @@ public class Check extends PaymentMean implements Serializable{
     public Check(){       
     }
     
-    public Check(int i,int n, String ib){
-        super(i);
+    public Check(int n, String ib){
+        super();
         numero = n;
         instBancaria = ib;
     }
   
        @Override
       public String toString(){   
-          String s = "\nNumero: "+numero+"\nInst. Bancaria: "+instBancaria;              
+          String s = "Numero: "+numero+"\nInst. Bancaria: "+instBancaria;              
           return super.toString()+s;
       
       }

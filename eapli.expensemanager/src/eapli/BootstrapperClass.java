@@ -50,10 +50,10 @@ public class BootstrapperClass {
     private static void inicializePaymentMeans(){
         IPaymentMeansRepository repoPay = new PaymentMeansRepository();
         
-        repoPay.registerPaymentMean(new Cash(1,"EUR"));
-        repoPay.registerPaymentMean(new Check(2,132514, "CGD"));
-        repoPay.registerPaymentMean(new CreditCard(3,new Date(),84515412,"BCP","VISA"));
-        repoPay.registerPaymentMean(new DebitCard(4,2342335,"Montepio","MasterCard"));
+        repoPay.registerPaymentMean(new Cash("EUR"));
+        repoPay.registerPaymentMean(new Check(132514, "CGD"));
+        repoPay.registerPaymentMean(new CreditCard(new Date(),84515412,"BCP","VISA"));
+        repoPay.registerPaymentMean(new DebitCard(2342335,"Montepio","MasterCard"));
     }
         
     private static void inicializeExpenses(){

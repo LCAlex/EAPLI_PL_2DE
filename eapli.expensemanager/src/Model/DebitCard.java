@@ -24,8 +24,8 @@ public class DebitCard extends PaymentMean implements Serializable {
     
     public DebitCard(){}
     
-    public DebitCard(int i,long n, String ib, String t){
-        super(i);
+    public DebitCard(long n, String ib, String t){
+        super();
         numero = n;
         instBancaria = ib;
         tipo = t;
@@ -33,7 +33,7 @@ public class DebitCard extends PaymentMean implements Serializable {
     
       @Override
       public String toString(){   
-          String s = "\nNumero: "+numero+"\nInst. Bancaria: "+instBancaria+"\nTipo: "+tipo;              
+          String s = "Numero: "+numero+"\nInst. Bancaria: "+instBancaria+"\nTipo: "+tipo;              
           return super.toString()+s;
       
       }

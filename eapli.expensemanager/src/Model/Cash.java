@@ -5,7 +5,6 @@
 package Model;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -46,15 +45,15 @@ public class Cash extends PaymentMean implements Serializable{
 public Cash() {
     }
     
-   public Cash(int i, String c)
+   public Cash(String c)
    {
-      super(i);  
+      super();  
       currency = c;
    }
     
     @Override
       public String toString(){
-         String s = "\nCurrency: "+currency;
+         String s = "Currency: "+currency;
          return super.toString()+s;
       }
 

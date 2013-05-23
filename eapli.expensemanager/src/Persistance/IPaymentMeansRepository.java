@@ -12,6 +12,6 @@ import java.util.List;
  */
 public interface IPaymentMeansRepository {
     void registerPaymentMean(PaymentMean pm);
-    void showListPayMeans();
+    //void showListPayMeans();
     List<PaymentMean> getListPayMeans();
 }
