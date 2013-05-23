@@ -13,7 +13,7 @@ import Persistance.IIncomeTypeRepository;
  *
  * @author Tecnica21
  */
-public class IncomeTypeJpa extends JpaGeneric<IncomeType, Long> implements IIncomeTypeRepository{
+public class IncomeTypeJpa extends JpaGeneric<IncomeType, Integer> implements IIncomeTypeRepository{
       
     @Override
       public void saveIncomeType(IncomeType iT){

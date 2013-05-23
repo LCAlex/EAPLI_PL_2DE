@@ -30,7 +30,7 @@ public class ShowTotalExpensesController {
     }
 
     public BigDecimal showExpenses(int month, int year) {
-        ExpenseRepository rep = new ExpenseRepository();
+        IExpenseRepository rep = PersistenceFactory.getInstance().buildRepositoryFactory().getExpenseRepository();
         list = rep.getAllExpenses(month, year);
         ExpenseRecord rec = new ExpenseRecord(list);
         return rec.getTotal();
@@ -87,8 +87,8 @@ public class ShowTotalExpensesController {
      * @return
      */
     public List<ExpenseTotal> showExpenseByTypes(int month, int year) {
-        IExpenseTypeRepository typeRep = new ExpenseTypeRepository();
-        IExpenseRepository rep = new ExpenseRepository();
+        IExpenseTypeRepository typeRep = PersistenceFactory.getInstance().buildRepositoryFactory().getExpenseTypeRepository();
+        IExpenseRepository rep = PersistenceFactory.getInstance().buildRepositoryFactory().getExpenseRepository();
         ExpenseRecord rec;
         List<ExpenseTotal> temp = new ArrayList();
         for (ExpenseType expType : typeRep.getAllExpenseTypes()) {

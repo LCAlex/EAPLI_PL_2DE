@@ -23,6 +23,7 @@ import Persistance.IM.IncomeTypeRepository;
 import Persistance.IPaymentMeansRepository;
 import Persistance.IM.PaymentMeansRepository;
 import Persistance.PersistenceFactory;
+import eapli.util.DateTime;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -53,7 +54,7 @@ public class BootstrapperClass {
         
         repoPay.registerPaymentMean(new Cash("EUR"));
         repoPay.registerPaymentMean(new Check(132514, "CGD"));
-        repoPay.registerPaymentMean(new CreditCard(new Date(),84515412,"BCP","VISA"));
+        repoPay.registerPaymentMean(new CreditCard(DateTime.newDate(2013, 5, 12),842,"BCP","VISA"));
         repoPay.registerPaymentMean(new DebitCard(2342335,"Montepio","MasterCard"));
     }
         
@@ -81,10 +82,10 @@ public class BootstrapperClass {
         IIncomeTypeRepository repoType = PersistenceFactory.getInstance().buildRepositoryFactory().getIncomeTypeRepository();
         IIncomeRepository repo = PersistenceFactory.getInstance().buildRepositoryFactory().getIncomeRepository();
 
-        repo.saveIncome(new Income("Vencimento Abril", new Date(2013, 4, 5), new BigDecimal(750), repoType.getAllIncomeTypes().get(0)));
-        repo.saveIncome(new Income("Mesada de Abril", new Date(2013, 3, 1), new BigDecimal(125), repoType.getAllIncomeTypes().get(1)));
-        repo.saveIncome(new Income("Limpeza do Automóvel do Vizinho", new Date(2013, 4, 12), new BigDecimal(15), repoType.getAllIncomeTypes().get(2)));
-        repo.saveIncome(new Income("Subsídio Desemprego", new Date(2013, 3, 23), new BigDecimal(380), repoType.getAllIncomeTypes().get(3)));
+        repo.saveIncome(new Income("Vencimento Abril", DateTime.newDate(2013, 4, 5), new BigDecimal(750), repoType.getAllIncomeTypes().get(0)));
+        repo.saveIncome(new Income("Mesada de Abril", DateTime.newDate(2013, 3, 1), new BigDecimal(125), repoType.getAllIncomeTypes().get(1)));
+        repo.saveIncome(new Income("Limpeza do Automóvel do Vizinho", DateTime.newDate(2013, 4, 12), new BigDecimal(15), repoType.getAllIncomeTypes().get(2)));
+        repo.saveIncome(new Income("Subsídio Desemprego", DateTime.newDate(2013, 3, 23), new BigDecimal(380), repoType.getAllIncomeTypes().get(3)));
     }
     
 }

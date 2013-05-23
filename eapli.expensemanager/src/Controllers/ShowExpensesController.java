@@ -5,7 +5,9 @@
 package Controllers;
 
 import Model.Expense;
+import Persistance.IExpenseRepository;
 import Persistance.IM.ExpenseRepository;
+import Persistance.PersistenceFactory;
 import java.util.List;
 
 /**
@@ -17,12 +19,12 @@ public class ShowExpensesController extends BaseController{
       }
 
       public List<Expense> getAllExpenses() {
-            ExpenseRepository repo = new ExpenseRepository();
+            IExpenseRepository repo = PersistenceFactory.getInstance().buildRepositoryFactory().getExpenseRepository();
             return repo.getAllExpenses();
       }
 
       public Expense getLastExpense() {
-            ExpenseRepository repo = new ExpenseRepository();
+            IExpenseRepository repo = PersistenceFactory.getInstance().buildRepositoryFactory().getExpenseRepository();
             return repo.getLastExpense();
       }
 }

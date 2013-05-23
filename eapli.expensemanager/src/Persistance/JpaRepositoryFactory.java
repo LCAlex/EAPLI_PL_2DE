@@ -7,6 +7,8 @@ package Persistance;
 import Persistance.IExpenseRepository;
 import Persistance.IExpenseTypeRepository;
 import Persistance.IPaymentMeansRepository;
+import Persistance.IIncomeRepository;
+import Persistance.IIncomeTypeRepository;
 import javax.persistence.Persistence;
 
 /**

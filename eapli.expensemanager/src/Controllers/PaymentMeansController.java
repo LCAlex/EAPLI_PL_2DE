@@ -10,6 +10,8 @@ import Model.CreditCard;
 import Model.DebitCard;
 import Model.PaymentMean;
 import Persistance.IM.PaymentMeansRepository;
+import Persistance.IPaymentMeansRepository;
+import Persistance.PersistenceFactory;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +22,7 @@ import java.util.List;
 
 public class PaymentMeansController extends BaseController {
     
-    PaymentMeansRepository pmr = new PaymentMeansRepository();
+    IPaymentMeansRepository pmr = PersistenceFactory.getInstance().buildRepositoryFactory().getPaymentMeanRepository();
 
     public PaymentMeansController(){
         

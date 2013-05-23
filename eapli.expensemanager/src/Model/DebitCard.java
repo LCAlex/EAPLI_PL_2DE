@@ -5,11 +5,13 @@
 package Model;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
 
 /**
  *
  * @author Ruben Ferreira
  */
+@Entity
 public class DebitCard extends PaymentMean implements Serializable {
     
    

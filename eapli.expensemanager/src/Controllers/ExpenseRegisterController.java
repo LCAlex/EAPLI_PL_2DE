@@ -6,9 +6,13 @@ package Controllers;
 
 
 import Model.*;
+import Persistance.IExpenseRepository;
+import Persistance.IExpenseTypeRepository;
 import Persistance.IM.ExpenseRepository;
 import Persistance.IM.ExpenseTypeRepository;
 import Persistance.IM.PaymentMeansRepository;
+import Persistance.IPaymentMeansRepository;
+import Persistance.PersistenceFactory;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -24,18 +28,18 @@ public class ExpenseRegisterController extends BaseController{
 
      public void registerExpense(String desc, Date date, BigDecimal amount, ExpenseType expType, PaymentMean pm) {
             Expense expense = new Expense(desc, date, amount, expType, pm);
-            ExpenseRepository controller=new ExpenseRepository();
+            IExpenseRepository controller= PersistenceFactory.getInstance().buildRepositoryFactory().getExpenseRepository();
             controller.saveExpense(expense);
       } 
      
      public List<ExpenseType> getAllExpenseTypes(){
-         ExpenseTypeRepository expTypeRep = new ExpenseTypeRepository();
+         IExpenseTypeRepository expTypeRep = PersistenceFactory.getInstance().buildRepositoryFactory().getExpenseTypeRepository();
          List<ExpenseType> list = expTypeRep.getAllExpenseTypes();
          return list;
      }
      
      public List<PaymentMean> getAllPaymentMeans(){
-         PaymentMeansRepository expPayMean = new PaymentMeansRepository();
+         IPaymentMeansRepository expPayMean = PersistenceFactory.getInstance().buildRepositoryFactory().getPaymentMeanRepository();
          List<PaymentMean> list = expPayMean.getListPayMeans();
          return list;
      }

@@ -6,7 +6,9 @@ package Controllers;
 
 import Presentation.ExpenseTypeRegisterUI;
 import Model.ExpenseType;
+import Persistance.IExpenseTypeRepository;
 import Persistance.IM.ExpenseTypeRepository;
+import Persistance.PersistenceFactory;
 import java.util.List;
 
 /**
@@ -18,14 +20,14 @@ public class ExpenseTypeRegisterController extends BaseController{
     public ExpenseTypeRegisterController() {}
     
     public void obtainList(){
-        ExpenseTypeRepository repo = new ExpenseTypeRepository();
+        IExpenseTypeRepository repo = PersistenceFactory.getInstance().buildRepositoryFactory().getExpenseTypeRepository();
         ExpenseTypeRegisterUI interaction = new ExpenseTypeRegisterUI();
         interaction.displayList(repo.getAllExpenseTypes());
     }
 
     public void registerExpenseType(String name){
         ExpenseType et = new ExpenseType(name);
-        ExpenseTypeRepository repo = new ExpenseTypeRepository();
+        IExpenseTypeRepository repo = PersistenceFactory.getInstance().buildRepositoryFactory().getExpenseTypeRepository();
         repo.saveExpenseType(et);
     }
     

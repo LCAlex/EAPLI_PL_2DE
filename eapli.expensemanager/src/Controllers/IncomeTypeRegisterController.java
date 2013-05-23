@@ -6,7 +6,9 @@ package Controllers;
 
 import Presentation.IncomeTypeRegisterUI;
 import Model.IncomeType;
+import Persistance.IIncomeTypeRepository;
 import Persistance.IM.IncomeTypeRepository;
+import Persistance.PersistenceFactory;
 import java.util.List;
 
 /**
@@ -18,14 +20,14 @@ public class IncomeTypeRegisterController extends BaseController{
     public IncomeTypeRegisterController() {}
     
     public void obtainList(){
-        IncomeTypeRepository repo = new IncomeTypeRepository();
+        IIncomeTypeRepository repo = PersistenceFactory.getInstance().buildRepositoryFactory().getIncomeTypeRepository();
         IncomeTypeRegisterUI interaction = new IncomeTypeRegisterUI();
         interaction.displayList(repo.getAllIncomeTypes());
     }
 
     public void registerIncomeType(String name){
         IncomeType it = new IncomeType(name);
-        IncomeTypeRepository repo = new IncomeTypeRepository();
+        IIncomeTypeRepository repo = PersistenceFactory.getInstance().buildRepositoryFactory().getIncomeTypeRepository();
         repo.saveIncomeType(it);
     }
     
