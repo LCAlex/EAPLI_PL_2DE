@@ -5,7 +5,7 @@
 package eapli;
 
 import Model.Cash;
-import Model.Check;
+import Model.Cheque;
 import Model.CreditCard;
 import Model.DebitCard;
 import Model.Expense;
@@ -52,7 +52,7 @@ public class BootstrapperClass {
         IPaymentMeansRepository repoPay = PersistenceFactory.getInstance().buildRepositoryFactory().getPaymentMeanRepository();
         
         repoPay.registerPaymentMean(new Cash("EUR"));
-        repoPay.registerPaymentMean(new Check(132514, "CGD"));
+        repoPay.registerPaymentMean(new Cheque(132514, "CGD"));
         repoPay.registerPaymentMean(new CreditCard(new Date(),84515412,"BCP","VISA"));
         repoPay.registerPaymentMean(new DebitCard(2342335,"Montepio","MasterCard"));
     }

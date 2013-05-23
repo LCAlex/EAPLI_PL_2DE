@@ -5,7 +5,7 @@
 package Controllers;
 
 import Model.Cash;
-import Model.Check;
+import Model.Cheque;
 import Model.CreditCard;
 import Model.DebitCard;
 import Model.PaymentMean;
@@ -32,7 +32,7 @@ public class PaymentMeansController extends BaseController {
      } 
     
      public void registerCheck(int num, String desc){
-        Check c = new Check(num, desc);
+        Cheque c = new Cheque(num, desc);
         pmr.registerPaymentMean(c);
     }
     
