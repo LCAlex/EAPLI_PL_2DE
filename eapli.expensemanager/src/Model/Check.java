@@ -18,9 +18,7 @@ import javax.persistence.Id;
 @Entity
 public class Check extends PaymentMean implements Serializable{
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+
     int numero;
     String instBancaria;
     

@@ -17,9 +17,7 @@ import javax.persistence.Id;
 @Entity
 public class Cash extends PaymentMean implements Serializable{
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+   
     private String currency;
     
     

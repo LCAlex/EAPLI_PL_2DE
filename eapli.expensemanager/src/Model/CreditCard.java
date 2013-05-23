@@ -17,9 +17,7 @@ import javax.persistence.Temporal;
  */
 public class CreditCard extends PaymentMean implements Serializable {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+ 
     @Temporal(javax.persistence.TemporalType.DATE)
     Date dataVal;
     int numero;
