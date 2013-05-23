@@ -13,7 +13,7 @@ import Persistance.IExpenseTypeRepository;
  *
  * @author Rui Damiao
  */
-public class ExpenseTypeJpa extends JpaGeneric<ExpenseType, Long> implements IExpenseTypeRepository{
+public class ExpenseTypeJpa extends JpaGeneric<ExpenseType, Integer> implements IExpenseTypeRepository{
       
     @Override
       public void saveExpenseType(ExpenseType eT){
