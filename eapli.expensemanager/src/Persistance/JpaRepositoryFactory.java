@@ -28,4 +28,14 @@ public class JpaRepositoryFactory implements IRepositoryFactory{
     public IPaymentMeansRepository getPaymentMeanRepository(){
         return new Persistance.JPA.PaymentMeansJPA();
     }
+    
+    @Override
+    public IIncomeTypeRepository getIncomeTypeRepository(){
+        return new Persistance.JPA.IncomeTypeJpa();
+    }
+    
+    @Override
+    public IIncomeRepository getIncomeRepository(){
+        return new Persistance.JPA.IncomeJPA();
+    }
 }

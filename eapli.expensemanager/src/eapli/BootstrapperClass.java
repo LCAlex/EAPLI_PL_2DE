@@ -22,6 +22,7 @@ import Persistance.IM.IncomeRepository;
 import Persistance.IM.IncomeTypeRepository;
 import Persistance.IPaymentMeansRepository;
 import Persistance.IM.PaymentMeansRepository;
+import Persistance.PersistenceFactory;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -39,7 +40,7 @@ public class BootstrapperClass {
     }
     
     private static void inicializeExpenseTypes(){
-        IExpenseTypeRepository repoType = new ExpenseTypeRepository();
+        IExpenseTypeRepository repoType = PersistenceFactory.getInstance().buildRepositoryFactory().getExpenseTypeRepository();
 
         repoType.saveExpenseType(new ExpenseType("Vestuario"));
         repoType.saveExpenseType(new ExpenseType("Refeições"));
@@ -48,7 +49,7 @@ public class BootstrapperClass {
     }
     
     private static void inicializePaymentMeans(){
-        IPaymentMeansRepository repoPay = new PaymentMeansRepository();
+        IPaymentMeansRepository repoPay = PersistenceFactory.getInstance().buildRepositoryFactory().getPaymentMeanRepository();
         
         repoPay.registerPaymentMean(new Cash(1,"EUR"));
         repoPay.registerPaymentMean(new Check(2,132514, "CGD"));
@@ -57,9 +58,9 @@ public class BootstrapperClass {
     }
         
     private static void inicializeExpenses(){
-        IExpenseTypeRepository repoType = new ExpenseTypeRepository();
-        IPaymentMeansRepository repoPay = new PaymentMeansRepository();
-        IExpenseRepository repo = new ExpenseRepository();
+        IExpenseTypeRepository repoType = PersistenceFactory.getInstance().buildRepositoryFactory().getExpenseTypeRepository();
+        IPaymentMeansRepository repoPay = PersistenceFactory.getInstance().buildRepositoryFactory().getPaymentMeanRepository();
+        IExpenseRepository repo = PersistenceFactory.getInstance().buildRepositoryFactory().getExpenseRepository();
         
         repo.saveExpense(new Expense("Autocarro", 2013, 3, 4, new BigDecimal(2.4),repoType.getAllExpenseTypes().get(2), repoPay.getListPayMeans().get(0)));
         repo.saveExpense(new Expense("Almoço", 2013, 3, 5, new BigDecimal(12.4),repoType.getAllExpenseTypes().get(1), repoPay.getListPayMeans().get(3)));
@@ -68,7 +69,7 @@ public class BootstrapperClass {
     }
     
     private static void inicializeIncomeTypes(){
-        IIncomeTypeRepository repoType = new IncomeTypeRepository();
+        IIncomeTypeRepository repoType = PersistenceFactory.getInstance().buildRepositoryFactory().getIncomeTypeRepository();
         
         repoType.saveIncomeType(new IncomeType("Salário"));
         repoType.saveIncomeType(new IncomeType("Mesada"));
@@ -77,8 +78,8 @@ public class BootstrapperClass {
     }
     
     private static void inicializeIncomes(){
-        IIncomeTypeRepository repoType = new IncomeTypeRepository();
-        IIncomeRepository repo = new IncomeRepository();
+        IIncomeTypeRepository repoType = PersistenceFactory.getInstance().buildRepositoryFactory().getIncomeTypeRepository();
+        IIncomeRepository repo = PersistenceFactory.getInstance().buildRepositoryFactory().getIncomeRepository();
 
         repo.saveIncome(new Income("Vencimento Abril", new Date(2013, 4, 5), new BigDecimal(750), repoType.getAllIncomeTypes().get(0)));
         repo.saveIncome(new Income("Mesada de Abril", new Date(2013, 3, 1), new BigDecimal(125), repoType.getAllIncomeTypes().get(1)));
