@@ -48,7 +48,9 @@ public class IncomeRegisterUI extends BaseUI{
             */
             
             List<IncomeType> typeList = controller.getAllIncomeTypes();
+            System.out.println("");
             displayIncomeTypeList(typeList);
+            System.out.println("");
             int nExpType = Console.readInteger("Select Income Type number:");
             
             IncomeType incType = typeList.get(nExpType-1);
@@ -69,7 +71,8 @@ public class IncomeRegisterUI extends BaseUI{
       
        private void displayIncomeTypeList(List<IncomeType> list) {
             int i=0;
-            System.out.println("List of Income Types");
+            System.out.println("* * *  WHAT TYPE OF INCOME DO YOU WISH TO ADD?  * * *");
+            System.out.println("===================\n"); 
             for (IncomeType incType : list) {
                   i=i+1;
                   System.out.println("Income Type "+i+"\n" + incType);

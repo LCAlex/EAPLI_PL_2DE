@@ -6,16 +6,13 @@ package Persistance.JPA;
 
 import Model.Income;
 import Persistance.IIncomeRepository;
-import java.math.BigDecimal;
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 
 /**
  *
  * @author Ruben Ferreira
  */
-public class IncomeJPA extends JpaGeneric<Income, Long> implements IIncomeRepository {
+public class IncomeJPA extends JpaGeneric<Income, Integer> implements IIncomeRepository {
 
     @Override
     public void saveIncome(Income inc) {

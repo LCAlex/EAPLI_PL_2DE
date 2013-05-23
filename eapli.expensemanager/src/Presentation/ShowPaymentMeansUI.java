@@ -51,7 +51,7 @@ public class ShowPaymentMeansUI extends BaseUI {
          
          if("Model.Cash".equals(pm.getClass().getName()))
              nome = "Cash";
-         if("Model.Check".equals(pm.getClass().getName()))
+         if("Model.Cheque".equals(pm.getClass().getName()))
              nome = "Check";
          if("Model.CreditCard".equals(pm.getClass().getName()))
              nome = "Credit Card";

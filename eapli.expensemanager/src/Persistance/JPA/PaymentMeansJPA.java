@@ -11,10 +11,6 @@ package Persistance.JPA;
 import Model.PaymentMean;
 import java.util.List;
 import Persistance.IPaymentMeansRepository;
-import eapli.util.DateTime;
-import java.util.Calendar;
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
 
 /**
  *

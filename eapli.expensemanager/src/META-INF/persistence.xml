@@ -11,6 +11,7 @@
     <class>Model.PaymentMean</class>
     <class>Model.CreditCard</class>
     <class>Model.DebitCard</class>
+    <class>Model.Cheque</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:h2:../db/expenses"/>
       <property name="javax.persistence.jdbc.password" value=""/>

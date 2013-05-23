@@ -12,21 +12,14 @@ import Model.Expense;
 import Model.ExpenseType;
 import Model.Income;
 import Model.IncomeType;
-import Persistance.IM.ExpenseRepository;
-import Persistance.IM.ExpenseTypeRepository;
 import Persistance.IExpenseRepository;
 import Persistance.IExpenseTypeRepository;
 import Persistance.IIncomeRepository;
 import Persistance.IIncomeTypeRepository;
-import Persistance.IM.IncomeRepository;
-import Persistance.IM.IncomeTypeRepository;
 import Persistance.IPaymentMeansRepository;
-import Persistance.IM.PaymentMeansRepository;
 import Persistance.PersistenceFactory;
 import eapli.util.DateTime;
 import java.math.BigDecimal;
-import java.util.Date;
-
 /**
  *
  * @author Tecnica21
@@ -53,7 +46,7 @@ public class BootstrapperClass {
         IPaymentMeansRepository repoPay = PersistenceFactory.getInstance().buildRepositoryFactory().getPaymentMeanRepository();
         
         repoPay.registerPaymentMean(new Cash("EUR"));
-        repoPay.registerPaymentMean(new Check(132514, "CGD"));
+        repoPay.registerPaymentMean(new Cheque(132514, "CGD"));
         repoPay.registerPaymentMean(new CreditCard(DateTime.newDate(2013, 5, 12),842,"BCP","VISA"));
         repoPay.registerPaymentMean(new DebitCard(2342335,"Montepio","MasterCard"));
     }

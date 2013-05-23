@@ -9,7 +9,6 @@ import Model.Cheque;
 import Model.CreditCard;
 import Model.DebitCard;
 import Model.PaymentMean;
-import Persistance.IM.PaymentMeansRepository;
 import Persistance.IPaymentMeansRepository;
 import Persistance.PersistenceFactory;
 import java.util.Date;
