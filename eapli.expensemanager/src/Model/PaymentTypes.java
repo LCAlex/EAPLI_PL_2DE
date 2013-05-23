@@ -5,29 +5,31 @@
 package Model;
 
 import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author Joao
  */
 public class PaymentTypes {
     
-    private ArrayList<String> list=new ArrayList<String>();
-    public void PaymentTypes(){
+    private ArrayList<String> list = new ArrayList<>();
+    
+    public void PaymentTypes(){ 
+    }
+    
+    private void preencheLista(){
         list.add("Cash");
         list.add("Check");
         list.add("Debit Card");
-        list.add("Credit Card");
-        
+        list.add("Credit Card");    
     }
-
     /**
      * @return the list
      */
     public void getList() {
-        for(int i=0;i<list.size();i++){
-                System.out.println(i+". "+list.get(i));
+        preencheLista();
+        int i;
+        for(i=0;i<list.size();i++){
+                System.out.println((i+1)+". "+list.get(i));
             }
     }
 }

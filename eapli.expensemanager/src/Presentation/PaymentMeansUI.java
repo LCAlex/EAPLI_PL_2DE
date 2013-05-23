@@ -111,7 +111,7 @@ public class PaymentMeansUI extends BaseUI {
         pmc.showPaymentMeansList(); //lista todos os meios guardados no repositório
 
         System.out.println("* * *  WHAT TYPE OF MEAN DO YOU WISH TO ADD?  * * *");
-        System.out.println("===================\n"); //para efeito de teste está implementado assim
+        System.out.println("===================\n"); 
         PaymentTypes pmt = new PaymentTypes();
         pmt.getList();
         System.out.println("0. Exit\n\n");
