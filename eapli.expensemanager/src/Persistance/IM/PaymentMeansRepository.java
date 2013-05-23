@@ -48,6 +48,7 @@ public class PaymentMeansRepository implements IPaymentMeansRepository{
        
    }
    
+     @Override
    public List<PaymentMean> getListPayMeans(){
        return listPayMeans;
    }

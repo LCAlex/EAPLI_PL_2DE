@@ -29,13 +29,9 @@ public class PaymentMeansJPA extends JpaGeneric<PaymentMean, Long> implements IP
 
     @Override
     public void showListPayMeans() {
-        List<PaymentMean> listPayments = all();
-        for (int i = 0; i < listPayments.size(); i++) {
-            System.out.println("- " + listPayments.get(i).getClass().getName());
-            System.out.println(listPayments.get(i));
-        }
-        System.out.println("\n");
-        //TODO testes unitarios
+        EntityManager em = getEntityManager();
+        Query q = em.createQuery("SELECT * FROM Cash, Check, CreditCard, Debit Card");
+        System.out.println(q.getResultList());
     }
 
     @Override

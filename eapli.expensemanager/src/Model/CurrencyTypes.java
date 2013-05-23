@@ -23,10 +23,12 @@ public class CurrencyTypes {
     }
 
     private void preencheLista(){
+        if (list.isEmpty()) {
         list.add("Cash");
         list.add("Check");
         list.add("Debit Card");
-        list.add("Credit Card");    
+        list.add("Credit Card");  
+        }
     }
   
     public String getCurrencyList(){

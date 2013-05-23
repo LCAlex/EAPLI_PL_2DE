@@ -9,6 +9,8 @@ import Model.Income;
 import Persistance.IExpenseRepository;
 import Persistance.IIncomeRepository;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
  *
@@ -28,13 +30,9 @@ public class IncomeJPA extends JpaGeneric<Income, Long> implements IIncomeReposi
     
     @Override
     public void showIncomeList() {
-        List<Income> IncList = all();
-        for (int i = 0; i < IncList.size(); i++) {
-            System.out.println("- " + IncList.get(i).getClass().getName());
-            System.out.println(IncList.get(i));
-        }
-        System.out.println("\n");
-        //TODO testes unitarios
+        EntityManager em = getEntityManager();
+        Query q = em.createQuery("SELECT * FROM Income");
+        System.out.println(q.getResultList());
     }
 
     @Override
