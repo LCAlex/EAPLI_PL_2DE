@@ -36,8 +36,8 @@ public class ShowBalanceUI extends BaseUI{
             BigDecimal balance;
             ShowBalanceController controller = new ShowBalanceController();
             
-            //balance=controller.ShowBalanceController();
-           // System.out.println("Your Balance is: "+balance+"€");
+            balance = controller.ShowBalance();
+            System.out.println("Your Balance is: "+balance+"€");
      }
 
 }
