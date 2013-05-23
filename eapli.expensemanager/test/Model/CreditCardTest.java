@@ -4,6 +4,8 @@
  */
 package Model;
 
+import eapli.util.DateTime;
+import java.util.Date;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -15,9 +17,10 @@ import static org.junit.Assert.*;
  *
  * @author Zé
  */
-public class DebitCardTest {
+public class CreditCardTest {
+    Date d;
     
-    public DebitCardTest() {
+    public CreditCardTest() {
     }
     
     @BeforeClass
@@ -30,6 +33,7 @@ public class DebitCardTest {
     
     @Before
     public void setUp() {
+        d = DateTime.parseDate("20-05-2015");
     }
     
     @After
@@ -37,15 +41,15 @@ public class DebitCardTest {
     }
 
     /**
-     * Test of toString method, of class DebitCard.
+     * Test of toString method, of class CreditCard.
      */
     @Test
     public void testToString() {
         System.out.println("toString");
-        DebitCard instance = new DebitCard(2342335,"Montepio","MasterCard");
-        String expResult ="Numero: 2342335" + "\nInst. Bancaria: Montepio" + "\nTipo: MasterCard";
+        CreditCard instance = new CreditCard(d,84515412,"BCP","VISA");
+        String expResult ="Numero: 84515412" + "\nInst. Bancaria: BCP" + "\nTipo: VISA" +"\nData de Validade: Wed May 20 00:00:00 BST 2015";
         String result = instance.toString();
         assertEquals(expResult, result);
-
+       
     }
 }

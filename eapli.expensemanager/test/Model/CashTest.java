@@ -43,7 +43,7 @@ public class CashTest {
     public void testToString() {
         System.out.println("toString");
         Cash instance = new Cash("EUR");
-        String expResult = "ID:2" + "\nCurrency: EUR";
+        String expResult ="Currency: EUR";
         String result = instance.toString();
         assertEquals(expResult, result);
     }
