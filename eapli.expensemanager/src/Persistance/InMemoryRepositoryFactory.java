@@ -30,4 +30,14 @@ public class InMemoryRepositoryFactory implements IRepositoryFactory{
     public IPaymentMeansRepository getPaymentMeanRepository(){
         return new Persistance.IM.PaymentMeansRepository();
     }
+    
+    @Override
+    public IIncomeTypeRepository getIncomeTypeRepository(){
+        return new Persistance.IM.IncomeTypeRepository();
+    }
+    
+    @Override
+    public IIncomeRepository getIncomeRepository(){
+        return new Persistance.IM.IncomeRepository();
+    }
 }

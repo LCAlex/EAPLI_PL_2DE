@@ -7,6 +7,8 @@ package Persistance.IM;
 
 import Persistance.IExpenseRepository;
 import Persistance.IExpenseTypeRepository;
+import Persistance.IIncomeRepository;
+import Persistance.IIncomeTypeRepository;
 import Persistance.IPaymentMeansRepository;
 import Persistance.IRepositoryFactory;
 
@@ -29,5 +31,15 @@ public class InMemoryRepositoryFactory implements IRepositoryFactory{
     @Override
     public IPaymentMeansRepository getPaymentMeanRepository(){
         return new Persistance.IM.PaymentMeansRepository();
+    }
+    
+    @Override
+    public IIncomeTypeRepository getIncomeTypeRepository(){
+        return new Persistance.IM.IncomeTypeRepository();
+    }
+    
+    @Override
+    public IIncomeRepository getIncomeRepository(){
+        return new Persistance.IM.IncomeRepository();
     }
 }
