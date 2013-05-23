@@ -4,11 +4,21 @@
  */
 package Model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author Tecnica21
  */
+
+@Entity
 public class IncomeType {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String name;
     
     protected IncomeType() {
