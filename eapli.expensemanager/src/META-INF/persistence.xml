@@ -4,8 +4,13 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>Model.Expense</class>
     <class>Model.ExpenseType</class>
+    <class>Model.Cash</class>
+    <class>Model.Check</class>
+    <class>Model.Income</class>
+    <class>Model.IncomeType</class>
+    <class>Model.PaymentMean</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:h2:/Users/lmsc/Documents/ISEP/2012-2013/EAPLI/Projetos/Expenses/EAPLI_PL_2DE/db/expenses"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:h2:../db/expenses"/>
       <property name="javax.persistence.jdbc.password" value=""/>
       <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
       <property name="javax.persistence.jdbc.user" value=""/>
