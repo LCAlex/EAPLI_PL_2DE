@@ -16,7 +16,6 @@ import Persistance.IM.ExpenseTypeRepository;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 /**
  *
  * @author lmsc
@@ -96,6 +95,4 @@ public class ShowTotalExpensesController {
         return temp;
         
     }
-    private static final Logger LOG = Logger.getLogger(ShowTotalExpensesController.class.getName());
-    
 }
