@@ -42,7 +42,7 @@ public class CashTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Cash instance = new Cash(2,"EUR");
+        Cash instance = new Cash("EUR");
         String expResult = "ID:2" + "\nCurrency: EUR";
         String result = instance.toString();
         assertEquals(expResult, result);
@@ -54,7 +54,7 @@ public class CashTest {
     @Test
     public void testGetCurrency() {
         System.out.println("getCurrency");
-        Cash instance = new Cash(0,"Euro");
+        Cash instance = new Cash("Euro");
         String expResult = "Euro";
         String result = instance.getCurrency();
         assertEquals(expResult, result);

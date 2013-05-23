@@ -42,8 +42,8 @@ public class CheckTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        Check instance = new Check(2,200,"Caixa");
-        String expResult = "ID:2" + "\nNumero: 200" + "\nInst. Bancaria: Caixa";
+        Check instance = new Check(200,"Caixa");
+        String expResult = "\nNumero: 200" + "\nInst. Bancaria: Caixa";
         String result = instance.toString();
         assertEquals(expResult, result);
     }

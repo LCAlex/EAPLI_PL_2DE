@@ -10,3 +10,5 @@
 /eapli.util/nbproject/private/
 /eapli.util/build/
 /eapli.util/dist/
+/db/
+/db/*.db

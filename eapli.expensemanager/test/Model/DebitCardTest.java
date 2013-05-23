@@ -42,8 +42,8 @@ public class DebitCardTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        DebitCard instance = new DebitCard(4,2342335,"Montepio","MasterCard");
-        String expResult = "ID:4" + "\nNumero: 2342335" + "\nInst. Bancaria: Montepio" + "\nTipo: MasterCard";
+        DebitCard instance = new DebitCard(2342335,"Montepio","MasterCard");
+        String expResult = "\nNumero: 2342335" + "\nInst. Bancaria: Montepio" + "\nTipo: MasterCard";
         String result = instance.toString();
         assertEquals(expResult, result);
 
