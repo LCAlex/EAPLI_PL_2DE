@@ -4,18 +4,7 @@
  */
 package ModelView;
 
-import Model.Expense;
-import Model.ExpenseRecord;
-import Model.ExpenseType;
-import Model.PaymentMean;
-import Persistance.IExpenseTypeRepository;
-import Persistance.IM.ExpenseTypeRepository;
-import Persistance.IM.PaymentMeansRepository;
-import Persistance.IPaymentMeansRepository;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
