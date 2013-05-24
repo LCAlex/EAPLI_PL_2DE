@@ -70,15 +70,18 @@ public class ExpenseRegisterUI extends BaseUI {
         for (ExpenseType expType : list) {
             i = i + 1;
             System.out.println("Expense Type " + i + "\n" + expType);
+            System.out.println();
         }
     }
 
     private void displayPaymentMeansList(List<PaymentMean> list) {
         int i = 0;
-        System.out.println("List of Expense Types");
+        System.out.println("* * *  WHAT TYPE OF MEAN DO YOU WISH TO ADD?  * * *");
+        System.out.println("===================\n"); 
         for (PaymentMean payMean : list) {
             i = i + 1;
-            System.out.println("Expense Type " + i + "\n" + payMean);
+            System.out.println("Payment Mean " + i + "\n" + payMean);
+            System.out.println();
         }
     }
 
