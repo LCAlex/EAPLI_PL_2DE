@@ -10,6 +10,7 @@ import Persistance.IExpenseRepository;
 import Persistance.IIncomeRepository;
 import Persistance.IM.ExpenseRepository;
 import Persistance.IM.IncomeRepository;
+import Persistance.PersistenceFactory;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,13 +21,14 @@ import java.util.List;
  */
 public class AccountServices {
 
-    private static List<Income> listInc = new ArrayList<>();
-    private static List<Expense> listExp = new ArrayList<>();
-    IncomeRepository repi = new IncomeRepository();
-    ExpenseRepository repe = new ExpenseRepository();
+    
 
     public BigDecimal getBalance() {
 
+        List<Income> listInc = new ArrayList<>();
+        List<Expense> listExp = new ArrayList<>();
+        IIncomeRepository repi = PersistenceFactory.getInstance().buildRepositoryFactory().getIncomeRepository();
+        IExpenseRepository repe = PersistenceFactory.getInstance().buildRepositoryFactory().getExpenseRepository();
         BigDecimal totalExp = BigDecimal.ZERO;
         BigDecimal totalInc = BigDecimal.ZERO;
         BigDecimal total = BigDecimal.ZERO;
