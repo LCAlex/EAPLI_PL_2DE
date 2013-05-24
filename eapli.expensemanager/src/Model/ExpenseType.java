@@ -21,6 +21,10 @@ public class ExpenseType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    public int getId() {
+	return id;
+    }
     private String name;
 
     protected ExpenseType() {

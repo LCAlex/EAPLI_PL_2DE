@@ -72,6 +72,7 @@ public class ExpenseRepository implements IExpenseRepository{
         }
         return temp;
     }
+    
         public List<Expense> getAllExpensesByType(int month, int year, ExpenseType type) {
         List<Expense> temp = new ArrayList<>();
         for(Expense exp:listExpense){
