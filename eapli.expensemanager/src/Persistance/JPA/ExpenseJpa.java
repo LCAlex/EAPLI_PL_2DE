@@ -10,6 +10,7 @@ import java.util.List;
 import Persistance.IExpenseRepository;
 import eapli.util.DateTime;
 import java.util.Calendar;
+import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 /**
@@ -58,12 +59,11 @@ public class ExpenseJpa extends JpaGeneric<Expense, Long> implements IExpenseRep
     @Override
     public List<Expense> getAllExpensesByType(int month, int year, ExpenseType type) {
         EntityManager em = getEntityManager();
-        Query q = em.createQuery("SELECT exp FROM Expense exp WHERE exp.dateOcurred >= :start AND exp.dateOcurred <= :end ORDER BY :type");
-        Calendar start = DateTime.newCalendarDate(year, month, 1);
-        Calendar end = DateTime.newCalendarDate(year, month, 31);
+        Query q = em.createQuery("SELECT exp FROM Expense exp WHERE exp.dateOccurred >= :start AND exp.dateOccurred <= :end ORDER BY exp.expType.id");
+        Date start = DateTime.newDate(year, month, 1);
+        Date end = DateTime.newDate(year, month, 31);
         q.setParameter("start", start);
         q.setParameter("end", end);
-        q.setParameter("type", type);
         return q.getResultList();   
     }
 }
