@@ -36,22 +36,22 @@ public class ExpenseJpa extends JpaGeneric<Expense, Long> implements IExpenseRep
     @Override
     public List<Expense> getAllExpenses(int month, int year) {
         EntityManager em = getEntityManager();
-        Query q = em.createQuery("SELECT exp FROM Expense exp WHERE exp.dateOcurred >= :start AND exp.dateOcurred <= :end");
+        Query q = em.createQuery("SELECT exp FROM Expense exp WHERE exp.dateOccurred >= :start AND exp.dateOccurred <= :end");
         Calendar start = DateTime.newCalendarDate(year, month, 1);
         Calendar end = DateTime.newCalendarDate(year, month, 31);
-        q.setParameter("start", start);
-        q.setParameter("end", end);
+        q.setParameter("start", start.getTime());
+        q.setParameter("end", end.getTime());
         return q.getResultList();
     }
 
     @Override
     public List<Expense> getAllExpensesWeek(int week, int year) {
         EntityManager em = getEntityManager();
-        Query q = em.createQuery("SELECT exp FROM Expense exp WHERE exp.dateOcurred >= :start AND exp.dateOcurred <= :end");
+        Query q = em.createQuery("SELECT exp FROM Expense exp WHERE exp.dateOccurred >= :start AND exp.dateOccurred <= :end");
         Calendar start = DateTime.firstDateOfWeek(year, week);
         Calendar end = DateTime.lastDateOfWeek(year, week);
-        q.setParameter("start", start);
-        q.setParameter("end", end);
+        q.setParameter("start", start.getTime());
+        q.setParameter("end", end.getTime());
         return q.getResultList();
     }
 
